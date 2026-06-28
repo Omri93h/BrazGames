@@ -1,6 +1,6 @@
 const STORAGE_KEY = "dor-bachelor-submarine-state-v1";
 const STORAGE_VERSION = 1;
-const APP_VERSION = "2026-06-28-submarine-dor-miki-face-direction-1";
+const APP_VERSION = "2026-06-28-submarine-dor-face-size-1";
 const ASSET_VERSION = "2026-06-27-miki-no-ghost-1";
 const SOUND_ASSET_VERSION = "2026-06-27-start-arcade-music-1";
 const URL_PARAMS = new URLSearchParams(window.location.search);
@@ -23,6 +23,7 @@ const HIT_FLASH_MS = 650;
 const ELIMINATION_FREEZE_MS = 5000;
 const PLAYER_RADIUS = 24;
 const SUBMARINE_VISUAL_SCALE = 0.82;
+const DOR_SELECTED_CREW_FACE_SCALE = 1.1;
 const PLAYER_COLLISION_RADIUS = PLAYER_RADIUS * 0.82;
 const PLAYER_COLLISION_POINTS = [
   { x: -58, y: 0, radiusScale: 0.95 },
@@ -3354,10 +3355,27 @@ function drawCrewFacesOnSubmarine(player) {
   }
 
   if (selectedFace) {
-    drawSubmarineCrewFace(selectedFace, 29, -27, 39, 50, {
+    const bounds = getSelectedCrewFaceBounds(characterId);
+    drawSubmarineCrewFace(selectedFace, bounds.x, bounds.y, bounds.width, bounds.height, {
       mirror: shouldMirrorSelectedCrewFace(player.id, characterId),
     });
   }
+}
+
+function getSelectedCrewFaceBounds(characterId) {
+  const baseBounds = { x: 29, y: -27, width: 39, height: 50 };
+  if (characterId !== "dor") return baseBounds;
+
+  const centerX = baseBounds.x + baseBounds.width / 2;
+  const centerY = baseBounds.y + baseBounds.height / 2;
+  const width = baseBounds.width * DOR_SELECTED_CREW_FACE_SCALE;
+  const height = baseBounds.height * DOR_SELECTED_CREW_FACE_SCALE;
+  return {
+    x: centerX - width / 2,
+    y: centerY - height / 2,
+    width,
+    height,
+  };
 }
 
 function shouldMirrorSelectedCrewFace(teamId, characterId) {
