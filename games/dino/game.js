@@ -6,7 +6,7 @@ const CHOOSE_FIGHTER_SOUND_SRC = "assets/sounds/choose-your-fighter.mp3?v=2026-0
 const SOUND_ASSET_VERSION = "2026-06-26-meser-magami-gabo-swap-1";
 const BACKGROUND_MUSIC_VERSION = "2026-06-26-dino-bg-music-1";
 const GAMEPLAY_SOUND_VERSION = "2026-06-27-dino-gameplay-sounds-1";
-const DINO_SPRITE_VERSION = "2026-06-26-dor-face-hair-1";
+const DINO_SPRITE_VERSION = "2026-06-28-dino-dor-face-up20-1";
 const JACKSON_OBSTACLE_VERSION = "2026-06-27-dino-obstacle-perf-1";
 const JACKSON_OBSTACLE_SRC = `assets/images/obstacles/jackson-face-runtime.png?v=${JACKSON_OBSTACLE_VERSION}`;
 const GAMEPLAY_IMAGE_PRELOADS = [
