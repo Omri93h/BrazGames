@@ -4,6 +4,7 @@ Current phase: Post-party static portal for The Braz Games.
 
 Active task:
 
+- Prepare the existing static portal for production sharing from a private GitHub repository.
 - Add a root `The Braz Games` launcher page with four rounded game-selection cards.
 - The portal links to the four approved games only and must not reset their localStorage state.
 - Serve the portal locally from the repository root at `http://localhost:3000`.

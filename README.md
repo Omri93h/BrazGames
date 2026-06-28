@@ -22,6 +22,12 @@ Runtime goals:
 - Custom images and sounds are replaceable from local asset folders.
 - Setup stays simple enough to trust in a party environment.
 
+Production notes:
+
+- The repository root is a static site; there is no build step.
+- Run `python3 tools/validate-static-site.py` before publishing or sharing a hosted link.
+- See `docs/PRODUCTION_DEPLOYMENT.md` for the private-repo sharing plan and GitHub Pages status.
+
 ## Run The Portal Locally
 
 From the repository root:
