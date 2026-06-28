@@ -1,0 +1,231 @@
+{
+    "spriteSheet": "castle",
+    "musicSheet": "castle",
+    "musicSwitch": {
+        "trackName": "overworld",
+        "afterSeconds": 30,
+        "fadeOutSeconds": 2.75
+    },
+    "patternSheet": "castle-pattern",
+    "checkpoints": [
+        [112, 176]
+    ],
+    "checkpointFlags": [
+        {"pos": [384, 208], "spawn": [384, 176]},
+        {"pos": [1536, 208], "spawn": [1536, 176]}
+    ],
+
+    "layers": [
+        {
+            "tiles": [
+                {
+                    "style": "sky",
+                    "ranges": [
+                        [0, 230, 0, 15]
+                    ]
+                }
+            ]
+        },
+        {
+            "tiles": [
+                {
+                    "style": "ground",
+                    "behavior": "ground",
+                    "ranges": [
+                        [0, 18, 13, 2],
+                        [21, 17, 13, 2],
+                        [41, 15, 13, 2],
+                        [59, 6, 13, 2],
+                        [82, 8, 13, 2],
+                        [91, 13, 13, 2],
+                        [108, 12, 13, 2],
+                        [124, 16, 13, 2],
+                        [144, 12, 13, 2],
+                        [160, 8, 13, 2],
+                        [172, 58, 13, 2],
+                        [0, 15, 2, 3],
+                        [42, 10, 2, 3],
+                        [82, 8, 2, 3],
+                        [96, 12, 2, 3],
+                        [116, 10, 2, 3],
+                        [150, 8, 2, 3],
+                        [174, 10, 2, 3]
+                    ]
+                },
+                {
+                    "pattern": "entrance-stairs",
+                    "ranges": [
+                        [0, 10]
+                    ]
+                },
+                {
+                    "style": "waves",
+                    "ranges": [
+                        [18, 3, 13],
+                        [38, 3, 13],
+                        [56, 3, 13],
+                        [65, 17, 13],
+                        [90, 1, 13],
+                        [104, 4, 13],
+                        [120, 4, 13],
+                        [140, 4, 13],
+                        [156, 4, 13],
+                        [168, 4, 13]
+                    ]
+                },
+                {
+                    "style": "tile-red",
+                    "ranges": [
+                        [18, 3, 14],
+                        [38, 3, 14],
+                        [56, 3, 14],
+                        [65, 17, 14],
+                        [90, 1, 14],
+                        [104, 4, 14],
+                        [120, 4, 14],
+                        [140, 4, 14],
+                        [156, 4, 14],
+                        [168, 4, 14]
+                    ]
+                },
+                {
+                    "style": "bricks",
+                    "behavior": "brick",
+                    "ranges": [
+                        [12, 4, 8],
+                        [25, 5, 7],
+                        [47, 5, 8],
+                        [110, 5, 7],
+                        [117, 3, 5],
+                        [139, 4, 9],
+                        [151, 4, 8],
+                        [175, 5, 8]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "yellow",
+                    "ranges": [
+                        [17, 9],
+                        [147, 9]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "red",
+                    "ranges": [
+                        [28, 9]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "purple",
+                    "ranges": [
+                        [53, 9]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "green",
+                    "ranges": [
+                        [112, 9]
+                    ]
+                },
+                {
+                    "style": "metal-alt",
+                    "behavior": "ground",
+                    "ranges": [
+                        [21, 7],
+                        [31, 9],
+                        [43, 6],
+                        [52, 9],
+                        [60, 6],
+                        [115, 8],
+                        [133, 7],
+                        [181, 7]
+                    ]
+                },
+                {
+                    "pattern": "pipe-2h",
+                    "ranges": [
+                        [35, 11]
+                    ]
+                },
+                {
+                    "pattern": "pipe-3h",
+                    "ranges": [
+                        [54, 10],
+                        [162, 11]
+                    ]
+                },
+                {
+                    "pattern": "bridge",
+                    "behavior": "ground",
+                    "ranges": [
+                        [65, 9],
+                        [120, 9],
+                        [183, 9]
+                    ]
+                },
+                {
+                    "style": "princess-daniel",
+                    "ranges": [
+                        [216, 10]
+                    ]
+                }
+            ]
+        }
+    ],
+
+    "entities": [
+        {
+            "name": "ice-agent-1",
+            "pos": [256, 184]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [520, 184]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [744, 184]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [1472, 184]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [1584, 184]
+        },
+        {
+            "name": "adolf-jackson",
+            "pos": [1776, 184]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [1840, 184]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [1904, 184]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [2184, 184]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [2488, 184]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [2776, 184]
+        }
+    ],
+    "triggers": []
+}

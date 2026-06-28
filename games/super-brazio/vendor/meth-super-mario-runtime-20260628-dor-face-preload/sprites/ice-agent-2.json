@@ -1,0 +1,27 @@
+{
+    "imageURL": "/img/ice-agent-2.png",
+
+    "frames": [
+        { "name": "walk-1", "rect": [0, 0, 24, 24] },
+        { "name": "walk-2", "rect": [24, 0, 24, 24] },
+        { "name": "walk-3", "rect": [48, 0, 24, 24] },
+        { "name": "walk-4", "rect": [72, 0, 24, 24] },
+        { "name": "walk-5", "rect": [96, 0, 24, 24] },
+        { "name": "walk-6", "rect": [120, 0, 24, 24] }
+    ],
+
+    "animations": [
+        {
+            "name": "walk",
+            "frameLen": 0.12,
+            "frames": [
+            "walk-1",
+            "walk-2",
+            "walk-3",
+            "walk-4",
+            "walk-5",
+            "walk-6"
+            ]
+        }
+    ]
+}

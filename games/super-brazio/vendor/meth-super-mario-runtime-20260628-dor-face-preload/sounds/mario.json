@@ -1,0 +1,25 @@
+{
+    "fx": {
+        "coin": {
+            "url": "/audio/fx/coin.ogg"
+        },
+        "jump": {
+            "url": "/audio/fx/jump.ogg"
+        },
+        "jump-large": {
+            "url": "/audio/fx/jump-large.ogg"
+        },
+        "power-up-appears": {
+            "url": "/audio/fx/power-up-appears.ogg"
+        },
+        "power-up-consume": {
+            "url": "/audio/fx/power-up-consume.ogg"
+        },
+        "power-down": {
+            "url": "/audio/fx/kick.ogg"
+        },
+        "stomp": {
+            "url": "/audio/fx/stomp.ogg"
+        }
+    }
+}

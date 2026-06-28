@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Super Mario</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000000'/%3E%3Crect x='12' y='30' width='40' height='22' fill='%238f6cff'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/main.css"/>
+    <script>
+        window.__SUPER_BRAZIO_VENDOR_BUILD__ = "2026-06-27-hardboot-58-dor-face-on-mario";
+        function reportSuperBrazioBootError(type, error) {
+            window.parent.postMessage({
+                source: "super-brazio-vendor",
+                type: "load-error",
+                message: error?.message || String(error || type),
+                stack: error?.stack || "",
+                build: window.__SUPER_BRAZIO_VENDOR_BUILD__,
+            }, "*");
+        }
+        window.addEventListener("error", event => {
+            reportSuperBrazioBootError("error", event.error || event.message);
+        });
+        window.addEventListener("unhandledrejection", event => {
+            reportSuperBrazioBootError("unhandledrejection", event.reason);
+        });
+    </script>
+    <script type="module" src="js/main.js?v=2026-06-27-hardboot-58-dor-face-on-mario"></script>
+</head>
+<body>
+    <canvas id="screen" width="256" height="240" class="aspect-4-3"></canvas>
+</body>
+</html>
