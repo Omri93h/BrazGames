@@ -90,7 +90,7 @@ Implemented now:
 - Refresh/reopen during the match does not return to the home screen.
 - If refresh happens during live play, the current round restarts from its countdown checkpoint while score and completed rounds stay saved.
 - Runner mechanics use local vendor files copied from `PrashanthaTP/dinorun`.
-- The active Dino sprites use the user-provided mirrored Dor face composited onto `dino-stationary.png`, `dino-run-0.png`, `dino-run-1.png`, and `dino-lose.png`. The face is enlarged, raised, and adjusted with top margin so the hair stays visible. The mirrored source face is stored at `assets/images/players/dor_face_mirrored.png`; original pre-face Dino sprites are backed up under `backups/dino-dor-face-2026-06-26/`, the previous face-composite pass is backed up under `backups/dino-dor-face-before-raise20-2026-06-26/`, and the clipped raised pass is backed up under `backups/dino-dor-face-before-hair-fix-2026-06-26/`.
+- The active Dino sprites use the user-provided mirrored Dor face composited onto `dino-stationary.png`, `dino-run-0.png`, `dino-run-1.png`, and `dino-lose.png`. The face is enlarged, raised, and adjusted with top margin so the hair stays visible. The latest sprite pass raises the composited face about 4 source pixels, which renders as roughly 20px higher in the scaled game lane. The mirrored source face is stored at `assets/images/players/dor_face_mirrored.png`; original pre-face Dino sprites are backed up under `backups/dino-dor-face-2026-06-26/`, the previous face-composite pass is backed up under `backups/dino-dor-face-before-raise20-2026-06-26/`, and the clipped raised pass is backed up under `backups/dino-dor-face-before-hair-fix-2026-06-26/`.
 
 Source / license:
 
