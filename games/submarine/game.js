@@ -12,7 +12,6 @@ const CLASSIC_VISUAL_MODE = (
 );
 const ARCADE_VISUAL_MODE = !CLASSIC_VISUAL_MODE;
 const START_CHECKPOINT_PARAMS = ["subSelect", "subChen", "subBrazim", "subSolo"];
-const RESET_PASSWORD = "Chmir";
 const HIT_LIMIT = 3;
 const ROUND_RESULT_SCREEN_SECONDS = 5;
 const NEXT_STAGE_SCREEN_SECONDS = 8;
@@ -526,7 +525,6 @@ const els = {
   dangerLine: document.querySelector("#dangerLine"),
   timer: document.querySelector("#timer"),
   resetModal: document.querySelector("#resetModal"),
-  resetPasswordInput: document.querySelector("#resetPasswordInput"),
   resetError: document.querySelector("#resetError"),
   confirmResetButton: document.querySelector("#confirmResetButton"),
   cancelResetButton: document.querySelector("#cancelResetButton"),
@@ -576,6 +574,7 @@ let nextStartMusicAudio = null;
 let startMusicIndex = 0;
 let startMusicWasStarted = false;
 let startMusicCrossfadeInProgress = false;
+let isReloadingAfterReset = false;
 const startMusicFadeFrames = new Set();
 const soundCache = new Map();
 const fighterRevealTimers = new WeakMap();
@@ -595,10 +594,6 @@ els.startScreen.addEventListener("click", (event) => {
   const card = event.target.closest(".character-card");
   if (!card) return;
   selectCharacter(card.dataset.teamId, card.dataset.characterId);
-});
-els.resetPasswordInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") confirmPasswordReset();
-  if (event.key === "Escape") closeResetModal();
 });
 window.addEventListener("keydown", handleKeyDown, { capture: true });
 window.addEventListener("keyup", handleKeyUp);
@@ -4234,7 +4229,7 @@ function createGameOverResetButton() {
   button.type = "button";
   button.className = "reset-button game-over-reset-button";
   button.textContent = "איפוס תוצאה";
-  button.addEventListener("click", openResetModal);
+  button.addEventListener("click", resetToHomeWithReload);
   return button;
 }
 
@@ -4378,6 +4373,7 @@ async function resetRuntimeState() {
   clearRulesTimeout();
   stopRareAdolfJacksonPresenceSound();
   stopStageMusic();
+  Object.assign(state, createInitialState());
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch {
@@ -4387,32 +4383,23 @@ async function resetRuntimeState() {
 }
 
 async function confirmPasswordReset() {
-  const password = els.resetPasswordInput.value;
-  if (password !== RESET_PASSWORD) {
-    els.resetError.textContent = "סיסמא לא נכונה";
-    els.resetPasswordInput.select();
-    return;
-  }
-
   closeResetModal(false);
-  await resetToStart();
+  await resetToHomeWithReload();
 }
 
 function openResetModal() {
   els.resetModal.classList.remove("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
   if (state.phase === "playing" || state.phase === "eliminating") {
     stopLoop();
   }
-  window.setTimeout(() => els.resetPasswordInput.focus(), 0);
+  window.setTimeout(() => els.confirmResetButton.focus(), 0);
 }
 
 function closeResetModal(shouldResume = true) {
   if (!els.resetModal || els.resetModal.classList.contains("is-hidden")) return;
 
   els.resetModal.classList.add("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
 
   if (shouldResume && !visibilityFrozen && (state.phase === "playing" || state.phase === "eliminating") && !animationFrameId) {
@@ -4421,7 +4408,16 @@ function closeResetModal(shouldResume = true) {
   }
 }
 
+async function resetToHomeWithReload() {
+  closeResetModal(false);
+  await resetRuntimeState();
+  isReloadingAfterReset = true;
+  window.location.replace(window.location.pathname);
+}
+
 function saveState() {
+  if (isReloadingAfterReset) return;
+
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({
       storageVersion: STORAGE_VERSION,
@@ -4806,8 +4802,6 @@ function skipDebugStageCountdownNow() {
 function shouldBlockBrowserShortcut(event) {
   if (!isGameSessionActive()) return false;
   if (!(event.metaKey || event.ctrlKey || event.altKey)) return false;
-  if (event.target?.id === "resetPasswordInput") return false;
-
   return true;
 }
 

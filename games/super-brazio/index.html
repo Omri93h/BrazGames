@@ -8,7 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>#4</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238f6cff'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="style.css?v=2026-06-28-start-cards-fit-1">
+    <link rel="stylesheet" href="style.css?v=2026-06-28-reset-confirm-1">
   </head>
   <body>
     <main id="app" class="app-shell">
@@ -169,6 +169,7 @@
       </section>
 
       <section id="gameScreen" class="game-screen is-hidden" aria-label="מסך משחק">
+        <button id="quickResetButton" class="quick-reset-button" type="button">איפוס</button>
         <div id="debugHudBadge" class="debug-hud-badge is-hidden" aria-live="polite">דיבאג פעיל - Ctrl/Command+I</div>
         <div class="race-stage">
           <article class="world-panel world-panel-chen" data-team-id="chen" style="--team-color: var(--team-red);">
@@ -202,11 +203,10 @@
 
       <div id="resetModal" class="modal-backdrop is-hidden" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
         <div class="modal-card">
-          <h2 id="resetModalTitle">עלק איפוס יבזונה, מה הסיסמא אה</h2>
-          <input id="resetPasswordInput" type="password" autocomplete="off" placeholder="סיסמא">
+          <h2 id="resetModalTitle">האם אתה בטוח?</h2>
           <p id="resetError" class="modal-error" aria-live="assertive"></p>
           <div class="modal-actions">
-            <button id="confirmResetButton" type="button">אישור</button>
+            <button id="confirmResetButton" type="button">כן, אפס</button>
             <button id="cancelResetButton" type="button">ביטול</button>
           </div>
         </div>
@@ -220,6 +220,6 @@
         }).catch(() => {});
       }
     </script>
-    <script src="game.js?v=2026-06-28-dor-face-placement-1"></script>
+    <script src="game.js?v=2026-06-28-reset-confirm-1"></script>
   </body>
 </html>

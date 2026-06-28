@@ -1,6 +1,5 @@
 const STORAGE_KEY = "dor-bachelor-dino-state-v1";
 const STORAGE_VERSION = 8;
-const RESET_PASSWORD = "Chmir";
 const IS_MAC_PLATFORM = /Mac|iPhone|iPad|iPod/i.test(navigator.platform || "");
 const CHOOSE_FIGHTER_SOUND_SRC = "assets/sounds/choose-your-fighter.mp3?v=2026-06-23-choose-fighter-1";
 const SOUND_ASSET_VERSION = "2026-06-26-meser-magami-gabo-swap-1";
@@ -372,7 +371,6 @@ const els = {
   roundCountdown: document.querySelector("#roundCountdown"),
   gameOverOverlay: document.querySelector("#gameOverOverlay"),
   resetModal: document.querySelector("#resetModal"),
-  resetPasswordInput: document.querySelector("#resetPasswordInput"),
   resetError: document.querySelector("#resetError"),
   confirmResetButton: document.querySelector("#confirmResetButton"),
   cancelResetButton: document.querySelector("#cancelResetButton"),
@@ -430,11 +428,6 @@ document.querySelectorAll(".character-card").forEach((card) => {
 els.startButton.addEventListener("click", handleStartButtonClick);
 els.confirmResetButton.addEventListener("click", confirmReset);
 els.cancelResetButton.addEventListener("click", closeResetModal);
-els.resetPasswordInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") confirmReset();
-  if (event.key === "Escape") closeResetModal();
-});
-
 document.addEventListener("keydown", handleKeyDown);
 
 init();
@@ -1957,34 +1950,23 @@ function clearTimers() {
 
 function openResetModal() {
   els.resetModal.classList.remove("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
-  window.setTimeout(() => els.resetPasswordInput.focus(), 0);
+  window.setTimeout(() => els.confirmResetButton.focus(), 0);
 }
 
 function closeResetModal() {
   els.resetModal.classList.add("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
 }
 
 function confirmReset() {
-  if (els.resetPasswordInput.value !== RESET_PASSWORD) {
-    els.resetError.textContent = "סיסמא לא נכונה";
-    els.resetPasswordInput.select();
-    return;
-  }
-
   localStorage.removeItem(STORAGE_KEY);
   Object.assign(state, createInitialState());
   startIntroStarted = false;
   stopLoop();
   clearTimers();
   closeResetModal();
-  syncCharacterSelectionUI();
-  updateStartButtonState();
-  renderHud();
-  showStartScreen();
+  window.location.replace(window.location.pathname);
 }
 
 function saveState() {

@@ -1,7 +1,6 @@
 const STORAGE_KEY = "dor-bachelor-super-brazio-state-v1";
 const VENDOR_DIAGNOSTICS_KEY = "dor-bachelor-super-brazio-vendor-diagnostics-v1";
 const STORAGE_VERSION = 4;
-const RESET_PASSWORD = "Chmir";
 const RULES_MODAL_MS = 16000;
 const COUNTDOWN_SECONDS = 3;
 const VENDOR_READY_TIMEOUT_MS = 7000;
@@ -159,6 +158,7 @@ const els = {
   startScreen: document.querySelector("#startScreen"),
   debugScreen: document.querySelector("#debugScreen"),
   gameScreen: document.querySelector("#gameScreen"),
+  quickResetButton: document.querySelector("#quickResetButton"),
   startButton: document.querySelector("#startButton"),
   dorFighterPreview: document.querySelector("#dorFighterPreview"),
   pishutoFighterPreview: document.querySelector("#pishutoFighterPreview"),
@@ -185,7 +185,6 @@ const els = {
   countdownNumber: document.querySelector("#countdownNumber"),
   winnerOverlay: document.querySelector("#winnerOverlay"),
   resetModal: document.querySelector("#resetModal"),
-  resetPasswordInput: document.querySelector("#resetPasswordInput"),
   resetError: document.querySelector("#resetError"),
   debugHudBadge: document.querySelector("#debugHudBadge"),
   debugHudPanels: new Map([
@@ -213,13 +212,9 @@ document.querySelectorAll("[data-debug-level]").forEach((button) => {
 });
 
 els.startButton.addEventListener("click", handleStartButtonClick);
+els.quickResetButton.addEventListener("click", openResetModal);
 els.confirmResetButton.addEventListener("click", confirmReset);
 els.cancelResetButton.addEventListener("click", closeResetModal);
-els.resetPasswordInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") confirmReset();
-  if (event.key === "Escape") closeResetModal();
-});
-
 document.addEventListener("keydown", handleKeyDown);
 document.addEventListener("keyup", handleKeyUp);
 window.addEventListener("message", handleVendorMessage);
@@ -1252,10 +1247,13 @@ function showWinnerOverlay() {
     </div>
     <div class="winner-banner">
       <strong>${winnerName} הגיע לגרין קארד!</strong>
+      <div class="winner-actions">
+        <button type="button" data-winner-reset>איפוס משחק</button>
+      </div>
     </div>
   `;
   els.winnerOverlay.classList.remove("is-hidden");
-  els.winnerOverlay.addEventListener("click", restartAfterWinner, {once: true});
+  els.winnerOverlay.querySelector("[data-winner-reset]")?.addEventListener("click", restartAfterWinner, {once: true});
 }
 
 function restartAfterWinner() {
@@ -1265,19 +1263,7 @@ function restartAfterWinner() {
       startDebugMode(getTeamLevel("brazim") || state.currentLevel || getDebugLevel());
       return;
     }
-    state.phase = "start";
-    state.winner = null;
-    state.elapsedMs = 0;
-    state.raceStartedAt = 0;
-    startIntroStarted = true;
-    countdownWaitingForVendor = false;
-    saveState();
-    releaseAllKeys();
-    clearAllFrameSources();
-    syncCharacterSelectionUI();
-    updateStartButtonState();
-    els.winnerOverlay.classList.add("is-hidden");
-    showStartScreen();
+    resetToHomeWithReload();
 }
 
 function escapeHtml(value) {
@@ -1292,22 +1278,21 @@ function escapeHtml(value) {
 
 function openResetModal() {
   els.resetModal.classList.remove("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
-  window.setTimeout(() => els.resetPasswordInput.focus(), 0);
+  window.setTimeout(() => els.confirmResetButton.focus(), 0);
 }
 
 function closeResetModal() {
   els.resetModal.classList.add("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
 }
 
 function confirmReset() {
-  if (els.resetPasswordInput.value !== RESET_PASSWORD) {
-    els.resetError.textContent = "לא";
-    return;
-  }
+  closeResetModal();
+  resetToHomeWithReload();
+}
+
+function resetToHomeWithReload() {
   localStorage.removeItem(STORAGE_KEY);
   stopGlobalStageMusic();
   Object.assign(state, createInitialState());
@@ -1318,14 +1303,7 @@ function confirmReset() {
   countdownWaitingForVendor = false;
   releaseAllKeys();
   clearAllFrameSources();
-  syncCharacterSelectionUI();
-  updateStartButtonState();
-  closeResetModal();
-  if (isDebugSession()) {
-    showDebugScreen();
-    return;
-  }
-  showStartScreen();
+  window.location.replace(window.location.pathname);
 }
 
 function restoreState() {

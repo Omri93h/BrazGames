@@ -8,8 +8,6 @@ const BOARD_COLUMNS = 6;
 const FAIR_SHUFFLE_ATTEMPTS = 1600;
 const FAIR_SHUFFLE_TIME_BUDGET_MS = 45;
 const MAX_CLOSE_PAIR_COUNT = 1;
-const RESET_PASSWORD = "Chmir";
-const CHEATER_PASSWORD = "Cheater";
 const MATCH_REVEAL_HOLD_MS = 0;
 const MISS_POPUP_DELAY_MS = 1000;
 const MISS_FEEDBACK_MS = 2200;
@@ -221,7 +219,6 @@ const els = {
   platoFighterPreview: document.querySelector("#platoFighterPreview"),
   startButton: document.querySelector("#startButton"),
   resetModal: document.querySelector("#resetModal"),
-  resetPasswordInput: document.querySelector("#resetPasswordInput"),
   resetError: document.querySelector("#resetError"),
   confirmResetButton: document.querySelector("#confirmResetButton"),
   cancelResetButton: document.querySelector("#cancelResetButton"),
@@ -254,6 +251,7 @@ let cursorBuddyPoint = null;
 let cursorBuddyKey = "";
 let cursorBuddySuppressed = false;
 let cursorBuddyBriefSuppressionTimeoutId = null;
+let isReloadingAfterReset = false;
 
 const state = createInitialState();
 
@@ -306,11 +304,6 @@ document.querySelectorAll(".character-card").forEach((card) => {
     selectCharacter(card.dataset.teamId, card.dataset.characterId);
   });
 });
-els.resetPasswordInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") confirmPasswordReset();
-  if (event.key === "Escape") closeResetModal();
-});
-
 initialize();
 
 function createInitialState() {
@@ -866,9 +859,8 @@ async function startGameAfterRaffle() {
 
 function openResetModal() {
   els.resetModal.classList.remove("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
-  window.setTimeout(() => els.resetPasswordInput.focus(), 0);
+  window.setTimeout(() => els.confirmResetButton.focus(), 0);
 }
 
 function handleGlobalKeyDown(event) {
@@ -887,34 +879,13 @@ function handleGlobalKeyDown(event) {
 
 function closeResetModal() {
   els.resetModal.classList.add("is-hidden");
-  els.resetPasswordInput.value = "";
   els.resetError.textContent = "";
 }
 
-function confirmPasswordReset() {
-  const password = els.resetPasswordInput.value;
-
-  if (password === CHEATER_PASSWORD) {
-    toggleCheaterMode();
-    closeResetModal();
-    return;
-  }
-
-  if (password !== RESET_PASSWORD) {
-    els.resetError.textContent = "סיסמא לא נכונה";
-    els.resetPasswordInput.select();
-    return;
-  }
-
-  clearSavedState();
+async function confirmPasswordReset() {
   closeResetModal();
-  showCleanStart();
-}
-
-function toggleCheaterMode() {
-  state.cheatRevealAll = !state.cheatRevealAll;
-  renderBoard();
-  saveState();
+  await resetMemoryRuntimeState();
+  reloadGameHome();
 }
 
 function getRepresentative(teamId) {
@@ -2385,6 +2356,8 @@ function normalizeSeenCardInstanceIds(nextState, deck) {
 }
 
 function saveState() {
+  if (isReloadingAfterReset) return;
+
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(serializeState()));
   } catch {
@@ -2462,6 +2435,7 @@ function clearSavedState() {
 
 async function resetMemoryRuntimeState() {
   clearSavedState();
+  applyState(createInitialState());
 
   if (window.caches && typeof window.caches.keys === "function") {
     try {
@@ -2471,6 +2445,11 @@ async function resetMemoryRuntimeState() {
       // Cache clearing is best-effort; this game does not require Cache API support.
     }
   }
+}
+
+function reloadGameHome() {
+  isReloadingAfterReset = true;
+  window.location.replace(window.location.pathname);
 }
 
 function getActiveTeam() {

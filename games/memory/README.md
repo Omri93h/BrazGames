@@ -60,21 +60,7 @@ Opening `http://localhost:3001` restores the saved Memory game automatically if 
 
 Refreshing, closing, or reopening the browser during an active Memory game must restore the same match state instead of returning to the home screen. Saved games are not cleared just because the app code version or card image manifest changed; the game only clears the Memory key when the saved JSON is unreadable or structurally invalid. Existing saved card image paths are refreshed to the current local asset version when possible.
 
-There is no visible `איפוס תוצאה` button on the clean start screen or during active gameplay. The final game-over result screen includes a secondary `איפוס תוצאה` button. Pressing `Command+D` on Mac or `Ctrl+D` on Windows also opens the same password-protected reset popup. It clears the Memory storage key only when the password is exactly:
-
-```text
-Chmir
-```
-
-Wrong or empty passwords do not reset the game.
-
-For testing, the same password popup also accepts:
-
-```text
-Cheater
-```
-
-`Cheater` toggles a visual cheat mode that shows all card faces. Entering `Cheater` again hides the unclaimed cards again. This does not reset the game, change scores, or mark cards as collected.
+There is no visible `איפוס תוצאה` button on the clean start screen or during active gameplay. The final game-over result screen includes a secondary `איפוס תוצאה` button. Pressing `Command+D` on Mac or `Ctrl+D` on Windows opens the same confirmation-only reset popup. There is no reset password; confirming clears only the Memory storage key and reloads the page to a clean start screen.
 
 For developer/admin reset, open:
 
@@ -273,9 +259,9 @@ If replacing effect sound files while keeping the same filenames, bump `SOUND_AS
 35. Closing/reopening restores same state.
 36. No visible `איפוס תוצאה` button appears on the clean start screen or during active gameplay.
 37. Final game-over result screen shows an `איפוס תוצאה` button.
-38. Pressing `Command+D` on Mac or `Ctrl+D` on Windows opens the password popup.
-39. Wrong password does not reset the game.
-40. Password `Chmir` clears only Memory state and returns to clean start.
+38. Pressing `Command+D` on Mac or `Ctrl+D` on Windows opens the confirmation reset popup.
+39. The reset popup asks `האם אתה בטוח?` and does not ask for a password.
+40. Confirming clears only Memory state and reloads to a clean start.
 41. Opening `http://localhost:3001?init=1` clears only Memory state.
 42. No selected character/player names appear inside team sections.
 43. No `התור שלנו` label appears inside team sections.

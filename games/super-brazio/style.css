@@ -739,6 +739,37 @@ button {
     linear-gradient(180deg, #1b331f, #11150d 54%, #070907);
 }
 
+.quick-reset-button {
+  position: fixed;
+  z-index: 16;
+  top: 0.7rem;
+  left: 0.7rem;
+  min-width: 4.4rem;
+  min-height: 2.15rem;
+  border: 2px solid rgba(255, 248, 222, 0.58);
+  border-radius: 8px;
+  background: rgba(8, 7, 10, 0.78);
+  color: #fff8de;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.28);
+  font-family: "Arial Black", Impact, "Noto Sans Hebrew", Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.quick-reset-button:hover,
+.quick-reset-button:focus-visible {
+  border-color: var(--game-accent);
+  background: rgba(20, 16, 30, 0.9);
+  outline: none;
+}
+
+.quick-reset-button:active {
+  transform: translateY(1px);
+}
+
 .race-stage {
   min-height: 0;
   display: grid;
@@ -966,7 +997,9 @@ button {
   min-height: clamp(4.9rem, 10vh, 7.25rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "title";
+  grid-template-areas:
+    "title"
+    "action";
   align-items: center;
   justify-items: center;
   gap: 0.12rem clamp(0.9rem, 2vw, 1.45rem);

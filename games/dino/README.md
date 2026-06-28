@@ -85,8 +85,8 @@ Implemented now:
 - Difficulty stars are hidden during normal play and briefly appear only when the difficulty increases.
 - On the start screen, `Command+D` on Mac or `Ctrl+D` on Windows toggles solo debug mode with one runner and shows a visible debug badge. Starting while debug mode is active skips the rules modal and round countdown and begins the round immediately.
 - During gameplay on Mac, `Ctrl+D` toggles solo debug mode; if it is enabled during a prep/countdown checkpoint, the round starts immediately instead of waiting.
-- During gameplay, `Command+D` on Mac or `Ctrl+D` on Windows opens the password reset popup.
-- Password `Chmir` clears only Dino state.
+- During gameplay, `Command+D` on Mac or `Ctrl+D` on Windows opens the confirmation reset popup.
+- There is no reset password; confirming clears only Dino state and reloads the page to the start screen.
 - Refresh/reopen during the match does not return to the home screen.
 - If refresh happens during live play, the current round restarts from its countdown checkpoint while score and completed rounds stay saved.
 - Runner mechanics use local vendor files copied from `PrashanthaTP/dinorun`.
@@ -113,7 +113,7 @@ This game is a two-team keyboard runner:
 - הבראזים: up arrow jumps.
 - Both runners move automatically.
 - No duck/slide in the current direction.
-- After 5 rounds, the game uses the shared centered winners modal card: `המנצחים:`, winner name, final score, team names, and a secondary password-protected `איפוס תוצאה` action.
+- After 5 rounds, the game uses the shared centered winners modal card: `המנצחים:`, winner name, final score, team names, and a secondary confirmation-only `איפוס תוצאה` action.
 
 ## Asset Folders
 
@@ -160,8 +160,8 @@ They are decorative only. Do not add them to `laneState.obstacles` or collision 
 22. Each round starts with an 8-second countdown only, no starter raffle.
 23. After 5 rounds, the centered winners/tie modal card is shown.
 24. `Command+D` on Mac or `Ctrl+D` on Windows on the start screen shows the solo debug badge, and starting in debug mode skips rules/countdown directly into gameplay.
-25. Wrong password does not reset.
-26. Password `Chmir` resets only Dino state.
+25. The reset popup asks `האם אתה בטוח?` and does not ask for a password.
+26. Confirming resets only Dino state and reloads to the start screen.
 27. `?init=1` clears only Dino state.
 28. Refresh during live play returns to the same round countdown with score preserved.
 29. On Mac, `Ctrl+D` during gameplay toggles solo debug mode.

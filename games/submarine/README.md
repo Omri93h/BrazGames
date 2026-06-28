@@ -86,7 +86,7 @@ Character roster:
 - Press `Command+D` on Mac or `Ctrl+D` on Windows on the start screen to toggle solo debug mode with one submarine for practice/testing. Only debug mode shows enemy pressure numbers.
 - In solo debug mode, press `Space` on the next-stage `מתחילים בעוד X` screen to skip the countdown and start the round immediately.
 - In solo debug mode, `הניסוי נגמר` uses the same full final-result screen treatment as the regular ending, including the scoreboard, Bezos SP side sprites, enemy-face strip, small background Jackson sprites that quickly appear and drift slowly behind the card in a DVD/no-HDMI-inspired path without rotating, stretching, or hard corner bounces, and reset button.
-- Press `Command+D` on Mac or `Ctrl+D` on Windows during the game to open the password-protected result reset popup. Password `Chmir` clears only this Submarine game state and returns to the home screen.
+- Press `Command+D` on Mac or `Ctrl+D` on Windows during the game to open the confirmation reset popup. There is no reset password; confirming clears only this Submarine game state and reloads the page to the home screen.
 - During active play, browser keyboard shortcuts such as zoom/reload/navigation are blocked as much as the browser allows, so frantic key presses do not shrink or interrupt the game.
 - The active game screen is locked to the viewport. The HUD is height-contained, and the Canvas size is rechecked continuously and on viewport changes so browser zoom/resize or long HUD text cannot leave the game drawing only in part of the screen.
 - The app keeps a small projector-safe margin around the full Submarine screen, including HUD, gameplay canvas, countdown overlays, reset modal, and final result screen. The canvas measures that actual safe area, so the projector margin protects the corners without changing the intended gameplay tuning.
@@ -158,7 +158,7 @@ The assignment does not alternate between rounds.
 - Round-summary survival time is always numeric, for example `00:50`, `01:20`, or `02:20`.
 - Game over shows a simple large result card: `המנצחים:`, the winning team, and a big left/right final score whose number order is left-to-right by visual placement: left number for `החן יוספים, ועוזריהם`, right number for `הבראזים`.
 - The final result screen also decorates the result with fully visible mirrored `bezos_southpark.webp` sprites on both sides and a compact row of local enemy-face assets underneath. Magami uses trimmed display-only copies there so it matches the other face sizes and alternates between closed-mouth and open-mouth frames instead of mirroring. Two smaller Michael Hitler / Adolf Jackson sprites appear quickly above the result card and drift slowly in a DVD/no-HDMI-inspired path, almost reaching edges without rotating, stretching, hard-bouncing off corners, or blocking the score and reset button.
-- Game over includes an `איפוס תוצאה` button that uses the same password popup.
+- Game over includes an `איפוס תוצאה` button that clears only this Submarine game state and reloads the page to the home screen immediately, without an extra confirmation prompt.
 - Enemy pressure is controlled by a simple local profile: warmup length, starting enemy cap, spawn pace, random enemy chance, wave size, cap growth, late-pressure growth, and maximum active enemy cap.
 - Future rounds can get custom enemy assets later.
 
@@ -296,9 +296,9 @@ If replacing sound files while keeping the same filenames, bump `SOUND_ASSET_VER
 30. Enemy pressure starts manageable, ramps gradually by adding about 4 enemies per pressure wave, and becomes a larger swarm if the round lasts around 90 seconds.
 31. `Command+D` on Mac or `Ctrl+D` on Windows on the start screen toggles solo debug mode with one submarine.
 31a. In solo debug mode, the `הניסוי נגמר` ending shows the full final-result treatment, including the scoreboard, Bezos SP side sprites, enemy-face strip, and reset button.
-32. `Command+D` on Mac or `Ctrl+D` on Windows during gameplay opens the reset popup.
-33. Wrong reset password does not reset.
-34. Password `Chmir` resets only Submarine state and returns to the start screen.
+32. `Command+D` on Mac or `Ctrl+D` on Windows during gameplay opens the reset confirmation popup.
+33. The reset popup asks `האם אתה בטוח?` and does not ask for a password.
+34. Confirming resets only Submarine state and reloads to the start screen.
 35. Browser shortcut key combinations during active play do not zoom/shrink the page or navigate away when preventable.
 36. Hiding/minimizing the browser freezes active gameplay and visible countdown/result timers; returning to the game resumes without timer jumps.
 37. Canvas drawing fills the full visible game area after resize/zoom changes.
