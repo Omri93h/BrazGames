@@ -144,6 +144,8 @@ Success and miss feedback both use the same centered overlay system. Celebration
 
 The game uses local card images first, then fills only missing pairs with a small number of letter cards.
 
+Memory preloads every listed card-face image as soon as the page script loads. The active board then renders those preloaded images through local Blob URLs, so revealing a card should not trigger a new `assets/images/cards/` request or show the text fallback before the photo.
+
 No real personal photos or private sounds are included beyond the approved local images already provided.
 
 Real card images can be added later under:

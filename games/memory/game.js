@@ -1,6 +1,6 @@
 const STORAGE_KEY = "dor-bachelor-memory-state-v1";
 const STORAGE_VERSION = 3;
-const APP_VERSION = "2026-06-15-memory-mouse-only-select-1";
+const APP_VERSION = "2026-06-28-memory-card-face-preload-1";
 const RESTORABLE_PHASES = new Set(["start", "rules", "raffle", "playing", "resolving", "gameOver"]);
 const PAIR_COUNT = 15;
 const CARD_COUNT = PAIR_COUNT * 2;
@@ -17,6 +17,7 @@ const CELEBRATION_MS = 1100;
 const SUCCESS_FEEDBACK_HOLD_MS = 2200;
 const CARD_FLIP_CLOSE_MS = 130;
 const CARD_FLIP_OPEN_MS = 170;
+const CARD_FACE_PRELOAD_TIMEOUT_MS = 4000;
 const CURSOR_REVEAL_SUPPRESSION_MS = 1000;
 const RAFFLE_DURATION_MS = 7000;
 const RAFFLE_RESULT_PAUSE_MS = 3000;
@@ -194,6 +195,8 @@ const SUCCESS_PHRASES = [
 ];
 
 const CARD_FACES = createCardFaces();
+const cardFaceObjectUrlBySrc = new Map();
+const cardFacePreload = preloadCardFaceImages(CARD_FACES);
 
 const els = {
   startScreen: document.querySelector("#startScreen"),
@@ -350,7 +353,7 @@ async function initialize() {
     return;
   }
 
-  restoreState(savedState);
+  await restoreState(savedState);
 }
 
 function showCleanStart() {
@@ -833,7 +836,7 @@ function clearRaffleHighlights() {
   });
 }
 
-function startGameAfterRaffle() {
+async function startGameAfterRaffle() {
   state.phase = "playing";
   state.locked = false;
   state.selectedIndexes = [];
@@ -847,6 +850,8 @@ function startGameAfterRaffle() {
     collectedPairs: [],
   }));
   state.gameOverResult = null;
+
+  await waitForCardFacePreload();
 
   clearRaffleHighlights();
   els.startScreen.classList.add("is-hidden");
@@ -1128,6 +1133,58 @@ function createCardFaces() {
   return [...imageFaces, ...placeholderFaces];
 }
 
+function preloadCardFaceImages(cardFaces) {
+  const srcs = [...new Set(
+    cardFaces
+      .filter((face) => face.type === "image" && face.src)
+      .map((face) => face.src),
+  )];
+
+  const promise = Promise.allSettled(srcs.map(preloadImage)).then((results) => ({
+    total: srcs.length,
+    loaded: results.filter((result) => result.status === "fulfilled").length,
+  }));
+
+  return { promise, srcs };
+}
+
+async function preloadImage(src) {
+  const response = await fetch(src, { cache: "force-cache" });
+  if (!response.ok) throw new Error(`Failed to preload ${src}`);
+
+  const objectUrl = URL.createObjectURL(await response.blob());
+  cardFaceObjectUrlBySrc.set(src, objectUrl);
+
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.loading = "eager";
+    image.onload = () => {
+      if (typeof image.decode !== "function") {
+        resolve(src);
+        return;
+      }
+
+      image.decode().then(() => resolve(src)).catch(() => resolve(src));
+    };
+    image.onerror = () => reject(new Error(`Failed to preload ${src}`));
+    image.src = objectUrl;
+  });
+}
+
+async function waitForCardFacePreload() {
+  if (!cardFacePreload.srcs.length) return;
+
+  await Promise.race([
+    cardFacePreload.promise,
+    wait(CARD_FACE_PRELOAD_TIMEOUT_MS),
+  ]);
+}
+
+function getPreloadedCardFaceSrc(src) {
+  return cardFaceObjectUrlBySrc.get(src) || src;
+}
+
 function getFilenameStem(filename) {
   return filename.replace(/\.[^.]+$/, "");
 }
@@ -1372,7 +1429,7 @@ function createCardFaceContent(card) {
   if (card.type === "image" && card.src) {
     const image = document.createElement("img");
     image.className = "card-image";
-    image.src = card.src;
+    image.src = getPreloadedCardFaceSrc(card.src);
     image.alt = card.label;
     image.loading = "eager";
     image.addEventListener("error", () => {
@@ -1421,7 +1478,7 @@ function renderScoreboard() {
       if (pair.type === "image" && pair.src) {
         const image = document.createElement("img");
 
-        image.src = pair.src;
+        image.src = getPreloadedCardFaceSrc(pair.src);
         image.alt = pair.label;
         image.loading = "eager";
         image.addEventListener("error", () => {
@@ -1970,7 +2027,7 @@ async function flyChipToScoreboard(team, card) {
 
   if (card.type === "image" && card.src) {
     const image = document.createElement("img");
-    image.src = card.src;
+    image.src = getPreloadedCardFaceSrc(card.src);
     image.alt = card.label;
     image.addEventListener("error", () => {
       image.remove();
@@ -2038,7 +2095,7 @@ function endGame() {
   saveState();
 }
 
-function restoreState(savedState) {
+async function restoreState(savedState) {
   applyState(savedState);
 
   if (state.phase === "start") {
@@ -2071,6 +2128,7 @@ function restoreState(savedState) {
 
   if (state.phase === "playing" || state.phase === "gameOver") {
     normalizeRestoredPlayingState();
+    await waitForCardFacePreload();
     els.startScreen.classList.add("is-hidden");
     els.gameScreen.classList.remove("is-hidden");
     renderBoard();
@@ -2213,7 +2271,7 @@ function createGameOverPairChip(pair, team) {
 
   if (pair.type === "image" && pair.src) {
     const image = document.createElement("img");
-    image.src = pair.src;
+    image.src = getPreloadedCardFaceSrc(pair.src);
     image.alt = pair.label;
     image.loading = "eager";
     image.addEventListener("error", () => {
