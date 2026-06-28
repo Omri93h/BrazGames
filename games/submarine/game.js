@@ -1,6 +1,6 @@
 const STORAGE_KEY = "dor-bachelor-submarine-state-v1";
 const STORAGE_VERSION = 1;
-const APP_VERSION = "2026-06-28-start-cards-fit-volume-clamp-1";
+const APP_VERSION = "2026-06-28-submarine-dor-miki-face-direction-1";
 const ASSET_VERSION = "2026-06-27-miki-no-ghost-1";
 const SOUND_ASSET_VERSION = "2026-06-27-start-arcade-music-1";
 const URL_PARAMS = new URLSearchParams(window.location.search);
@@ -475,8 +475,8 @@ const CHARACTER_FACE_SOURCE_FACING = {
   },
   brazim: {
     pishuto: -1,
-    miki: -1,
-    dor: 0,
+    miki: 1,
+    dor: -1,
     gabo: -1,
   },
 };
