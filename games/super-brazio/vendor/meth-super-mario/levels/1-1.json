@@ -1,0 +1,330 @@
+{
+    "spriteSheet": "overworld",
+    "musicSheet": "overworld",
+    "patternSheet": "overworld-pattern",
+    "checkpoints": [
+        [40, 192]
+    ],
+    "checkpointFlags": [
+        {"pos": [384, 208], "spawn": [384, 192]},
+        {"pos": [1616, 208], "spawn": [1616, 192]},
+        {"pos": [2768, 208], "spawn": [2768, 192]}
+    ],
+
+    "layers": [
+        {
+            "tiles": [
+                {
+                    "style": "sky",
+                    "ranges": [
+                        [0, 212, 0, 15]
+                    ]
+                },
+                {
+                    "style": "ground",
+                    "behavior": "ground",
+                    "ranges": [
+                        [0, 69, 13, 2],
+                        [71, 15, 13, 2],
+                        [89, 64, 13, 2],
+                        [155, 57, 13, 2]
+                    ]
+                }
+            ]
+        },
+        {
+            "tiles": [
+                {
+                    "pattern": "cloud-single",
+                    "ranges": [
+                        [8, 3],
+                        [19, 2],
+                        [56, 3],
+                        [67, 2],
+                        [104, 3],
+                        [115, 2],
+                        [152, 3],
+                        [163, 2],
+                        [200, 3]
+                    ]
+                },
+                {
+                    "pattern": "cloud-double",
+                    "ranges": [
+                        [36, 2],
+                        [84, 2],
+                        [132, 2],
+                        [180, 2]
+                    ]
+                },
+                {
+                    "pattern": "cloud-triple",
+                    "ranges": [
+                        [27, 3],
+                        [75, 3],
+                        [123, 3],
+                        [171, 3]
+                    ]
+                },
+                {
+                    "pattern": "bush-single",
+                    "ranges": [
+                        [23, 12],
+                        [71, 12],
+                        [119, 12],
+                        [167, 12]
+                    ]
+                },
+                {
+                    "pattern": "bush-double",
+                    "ranges": [
+                        [41, 12],
+                        [89, 12],
+                        [137, 12]
+                    ]
+                },
+                {
+                    "pattern": "bush-triple",
+                    "ranges": [
+                        [11, 12],
+                        [59, 12],
+                        [107, 12]
+                    ]
+                },
+                {
+                    "style": "bush-3",
+                    "ranges": [
+                        [159, 12],
+                        [207, 12]
+                    ]
+                },
+                {
+                    "pattern": "hill-small",
+                    "ranges": [
+                        [16, 11],
+                        [64, 11],
+                        [112, 11],
+                        [160, 11],
+                        [208, 11]
+                    ]
+                },
+                {
+                    "pattern": "hill-large",
+                    "ranges": [
+                        [0, 10],
+                        [48, 10],
+                        [96, 10],
+                        [144, 10],
+                        [192, 10]
+                    ]
+                },
+                {
+                    "style": "metal",
+                    "behavior": "ground",
+                    "ranges": [
+                        [64, 8]
+                    ]
+                },
+                {
+                    "style": "bricks-top",
+                    "behavior": "brick",
+                    "ranges": [
+                        [20, 5, 9],
+                        [77, 3, 9],
+                        [80, 8, 5],
+                        [91, 4, 5],
+                        [94, 9],
+                        [100, 2, 9],
+                        [118, 9],
+                        [121, 3, 5],
+                        [128, 4, 5],
+                        [129, 2, 9],
+                        [168, 4, 9]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "red",
+                    "ranges": [
+                        [16, 9],
+                        [23, 9],
+                        [109, 9],
+                        [130, 5]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "green",
+                    "ranges": [
+                        [21, 9],
+                        [78, 9],
+                        [109, 5],
+                        [170, 9]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "yellow",
+                    "ranges": [
+                        [22, 5],
+                        [106, 9],
+                        [129, 5]
+                    ]
+                },
+                {
+                    "style": "chance",
+                    "behavior": "ground",
+                    "mushroom": "purple",
+                    "ranges": [
+                        [94, 5],
+                        [112, 9]
+                    ]
+                },
+                {
+                    "pattern": "chocolate-stairs-4h",
+                    "ranges": [
+                        [134, 9],
+                        [148, 9]
+                    ]
+                },
+                {
+                    "pattern": "chocolate-stairs-4h-reverse",
+                    "ranges": [
+                        [140, 9],
+                        [155, 9]
+                    ]
+                },
+                {
+                    "pattern": "chocolate-stairs-final",
+                    "ranges": [
+                        [181, 5]
+                    ]
+                },
+                {
+                    "pattern": "chocolate-stack-4h",
+                    "ranges": [
+                        [152, 1, 9]
+                    ]
+                },
+                {
+                    "pattern": "flag-pole-green",
+                    "ranges": [
+                        [198, 2]
+                    ]
+                },
+                {
+                    "pattern": "castle-small",
+                    "ranges": [
+                        [202, 8]
+                    ]
+                },
+                {
+                    "pattern": "pipe-2h",
+                    "ranges": [
+                        [28, 11],
+                        [163, 11],
+                        [179, 11]
+                    ]
+                },
+                {
+                    "pattern": "pipe-3h",
+                    "ranges": [
+                        [38, 10]
+                    ]
+                },
+                {
+                    "pattern": "pipe-4h",
+                    "ranges": [
+                        [46, 9],
+                        [57, 9]
+                    ]
+                }
+
+            ]
+        }
+    ],
+
+    "entities": [
+        {
+            "name": "ice-agent-1",
+            "pos": [352, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [640, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [816, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [840, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [1280, 48]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [1312, 48]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [1552, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [1576, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [1712, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [1824, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [1848, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [1984, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [2008, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [2048, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [2072, 176]
+        },
+        {
+            "name": "ice-agent-1",
+            "pos": [2784, 176]
+        },
+        {
+            "name": "ice-agent-2",
+            "pos": [2808, 176]
+        },
+        {
+            "name": "adolf-jackson",
+            "pos": [3040, 176]
+        },
+        {
+            "id": "world-one-flag",
+            "name": "flag-pole",
+            "pos": [3168, 48]
+        }
+    ],
+    "triggers": []
+}

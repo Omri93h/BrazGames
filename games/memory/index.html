@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>#1</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2335d073'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=2026-06-26-restore-memory-start-bg-1">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="startScreen" class="start-screen" aria-labelledby="startTitle">
+        <div class="start-layout">
+          <section id="teamTwoSetup" class="team-select team-two" aria-label="בחירת שחקן החן יוספים, ועוזריהם">
+            <h2 class="team-select-title">
+              <span>החן יוספים,</span>
+              <small>ועוזריהם</small>
+            </h2>
+            <div class="character-grid">
+              <button class="character-card" type="button" data-team-id="chen" data-character-id="meser">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/messer_face_card.webp?v=2026-06-19-card-mirror-1" alt="מסר">
+                </span>
+              </button>
+              <button class="character-card" type="button" data-team-id="chen" data-character-id="magami">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/magami_face_card.webp?v=2026-06-19-card-mirror-1" alt="מגמי">
+                </span>
+              </button>
+              <button class="character-card" type="button" data-team-id="chen" data-character-id="omri">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/omri_face_card.webp?v=2026-06-19-hair-matte-1" alt="עומרי">
+                </span>
+              </button>
+              <button class="character-card" type="button" data-team-id="chen" data-character-id="plato">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/plato_face_card.webp?v=2026-06-18-plato-face-card-2" alt="פלטו">
+                </span>
+              </button>
+            </div>
+          </section>
+
+          <div class="start-card">
+            <div class="start-title-wrap">
+              <p class="start-kicker">משחק מספר 1</p>
+              <h1 id="startTitle">זיכרון בסלון</h1>
+            </div>
+
+            <div id="rafflePanel" class="raffle-panel" aria-live="assertive">
+              <p id="raffleResult" class="raffle-result"></p>
+            </div>
+
+          </div>
+
+          <section id="teamOneSetup" class="team-select team-one" aria-label="בחירת שחקן הבראזים">
+            <h2 class="team-select-title">הבראזים</h2>
+            <div class="character-grid">
+              <button class="character-card" type="button" data-team-id="brazim" data-character-id="pishuto">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/pishuto_face_card.webp?v=2026-06-26-pishuto-stripe-fix-1" alt="פישוטו">
+                </span>
+              </button>
+              <button class="character-card" type="button" data-team-id="brazim" data-character-id="miki">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/miki_face_card.webp?v=2026-06-27-miki-no-ghost-1" alt="מיקי">
+                </span>
+              </button>
+              <button class="character-card" type="button" data-team-id="brazim" data-character-id="dor" aria-label="דור">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/dor_face_card.webp?v=2026-06-16-dor-face-card-1" alt="דור">
+                </span>
+              </button>
+              <button class="character-card" type="button" data-team-id="brazim" data-character-id="gabo">
+                <span class="character-portrait character-portrait-image">
+                  <img class="character-headshot" src="assets/images/characters/gabo_face_card.webp?v=2026-06-18-fighter-polish-1" alt="גבו">
+                </span>
+              </button>
+            </div>
+          </section>
+
+          <div class="fighter-stage">
+            <div class="fighter-slot fighter-slot-chen" aria-hidden="true">
+              <div id="messerFighterPreview" class="fighter-preview team-two-fighter">
+                <img src="assets/images/characters/messer_fighter_preview.gif?v=2026-06-16-messer-xminus5-1" alt="">
+              </div>
+              <div id="magamiFighterPreview" class="fighter-preview team-two-fighter">
+                <img src="assets/images/characters/magami_fighter_preview.gif?v=2026-06-19-hair-matte-1" alt="">
+              </div>
+              <div id="platoFighterPreview" class="fighter-preview team-two-fighter">
+                <img src="assets/images/characters/plato_fighter_preview.gif?v=2026-06-18-plato-fighter-2" alt="">
+              </div>
+              <div id="omriFighterPreview" class="fighter-preview team-two-fighter">
+                <img src="assets/images/characters/omri_fighter_preview.gif?v=2026-06-19-hair-matte-1" alt="">
+              </div>
+            </div>
+            <div class="start-actions">
+              <button id="startButton" class="primary-button" type="button">התחל</button>
+            </div>
+            <div class="fighter-slot fighter-slot-brazim" aria-hidden="true">
+              <div id="pishutoFighterPreview" class="fighter-preview team-one-fighter">
+                <img src="assets/images/characters/pishuto_fighter_preview.gif?v=2026-06-26-pishuto-stripe-fix-1" alt="">
+              </div>
+              <div id="mikiFighterPreview" class="fighter-preview team-one-fighter">
+                <img src="assets/images/characters/miki_fighter_preview.gif?v=2026-06-27-miki-no-ghost-1" alt="">
+              </div>
+              <div id="dorFighterPreview" class="fighter-preview team-one-fighter">
+                <img src="assets/images/characters/dor_fighter_preview.gif?v=2026-06-18-dor-head90-1" alt="">
+              </div>
+              <div id="gaboFighterPreview" class="fighter-preview team-one-fighter">
+                <img src="assets/images/characters/gabo_fighter_preview.gif?v=2026-06-19-gabo-head-margin-1" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="raffleModal" class="raffle-modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="raffleModalTitle">
+          <div class="raffle-modal-card">
+            <p id="raffleModalTitle" class="raffle-modal-title">מגרילים מי מתחיל</p>
+            <div id="rafflePlayerCard" class="raffle-player-card">
+              <span id="rafflePlayerPortrait" class="raffle-player-portrait" aria-hidden="true"></span>
+              <span id="rafflePlayerName" class="raffle-player-name"></span>
+              <span id="rafflePlayerTeam" class="raffle-player-team"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="rulesOverlay" class="rules-overlay is-hidden" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
+          <section class="rules-card">
+            <div class="rules-timer" aria-hidden="true">
+              <span class="rules-timer-icon"></span>
+            </div>
+            <div class="rules-copy">
+              <p id="rulesTitle" class="rules-kicker">איך משחקים</p>
+              <h2>זיכרון בסלון</h2>
+              <ul>
+                <li>פותחים שני קלפים</li>
+                <li>זוג? שחק עוד תור אלוף</li>
+                <li>פספסתם? לוזר!!! התור עובר</li>
+                <li class="rules-key-row"><strong>שליטה:</strong> <span>עכבר בלבד</span></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="game-screen is-hidden" aria-label="זיכרון בסלון">
+        <section class="board-area">
+          <div id="board" class="board" aria-label="לוח קלפי זיכרון"></div>
+        </section>
+
+        <aside class="scoreboard" aria-label="לוח תוצאות">
+          <p id="statusMessage" class="status-message" aria-live="assertive"></p>
+
+          <div class="scoreboard-teams">
+            <section id="teamTwoPanel" class="team-panel team-two">
+              <div class="team-panel-header">
+                <div>
+                  <h3>
+                    <span class="team-title-main">החן יוספים,</span>
+                    <span class="team-title-sub">ועוזריהם</span>
+                  </h3>
+                </div>
+                <strong id="teamTwoScore" class="team-score">0</strong>
+              </div>
+              <div id="teamTwoCollection" class="collection" aria-label="זוגות שנאספו על ידי החן יוספים, ועוזריהם"></div>
+            </section>
+
+            <section id="teamOnePanel" class="team-panel team-one">
+              <div class="team-panel-header">
+                <div>
+                  <h3>הבראזים</h3>
+                </div>
+                <strong id="teamOneScore" class="team-score">0</strong>
+              </div>
+              <div id="teamOneCollection" class="collection" aria-label="זוגות שנאספו על ידי הבראזים"></div>
+            </section>
+          </div>
+        </aside>
+
+      </section>
+
+      <div id="celebrationLayer" class="celebration-layer" aria-hidden="true"></div>
+      <div id="turnCursorBuddy" class="turn-cursor-buddy" aria-hidden="true"></div>
+      <div id="gameOverOverlay" class="game-over-overlay is-hidden" aria-live="assertive"></div>
+
+      <div id="resetModal" class="modal-backdrop is-hidden" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+        <div class="modal-card">
+          <h2 id="resetModalTitle">עלק איפוס יבזונה, מה הסיסמא אה</h2>
+          <input id="resetPasswordInput" type="password" autocomplete="off" placeholder="סיסמא">
+          <p id="resetError" class="modal-error" aria-live="assertive"></p>
+          <div class="modal-actions">
+            <button id="confirmResetButton" class="modal-confirm" type="button">אישור</button>
+            <button id="cancelResetButton" class="modal-cancel" type="button">ביטול</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="game.js?v=2026-06-27-start-button-audio-gate-1"></script>
+  </body>
+</html>

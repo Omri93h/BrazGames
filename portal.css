@@ -1,0 +1,218 @@
+:root {
+  --ink: #fff7e6;
+  --muted: rgba(255, 247, 230, 0.72);
+  --gold: #f6c85f;
+  --blue: #2f80ff;
+  --red: #f04444;
+  --green: #52d273;
+  --shadow: 0 1.4rem 3.2rem rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100dvh;
+  overflow: hidden;
+  overflow-x: hidden;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, #070708 0%, #111113 46%, #050506 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 88%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portal-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(6.5rem, 0.42fr) auto minmax(2rem, 0.22fr);
+  align-items: center;
+  justify-items: center;
+  gap: clamp(1rem, 2.4vh, 1.8rem);
+  padding: clamp(1rem, 3vw, 2.2rem);
+}
+
+h1 {
+  align-self: end;
+  margin: 0;
+  max-width: 100%;
+  color: #fffaf0;
+  font-family: "Arial Black", Impact, "Noto Sans Hebrew", Arial, Helvetica, sans-serif;
+  font-size: clamp(3rem, 8vw, 7.2rem);
+  font-weight: 1000;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: none;
+  text-shadow:
+    0 5px 0 rgba(0, 0, 0, 0.58),
+    0 12px 28px rgba(0, 0, 0, 0.82),
+    0 0 22px rgba(246, 200, 95, 0.24);
+}
+
+h1 span {
+  display: inline;
+}
+
+.game-grid {
+  width: min(72rem, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.8vw, 1.25rem);
+}
+
+.game-card {
+  --card-bg: none;
+  --card-position: center;
+  --card-size: cover;
+  --card-accent: var(--gold);
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  align-content: space-between;
+  padding: clamp(0.95rem, 1.9vw, 1.35rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 247, 230, 0.22);
+  border-radius: 8px;
+  background: #101010;
+  box-shadow: var(--shadow);
+  transform: translateZ(0);
+  transition: transform 150ms ease, border-color 150ms ease, filter 150ms ease;
+}
+
+.game-card::before,
+.game-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.game-card::before {
+  z-index: -2;
+  background-image: var(--card-bg);
+  background-position: var(--card-position);
+  background-size: var(--card-size);
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+.game-card::after {
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.1) 44%, rgba(0, 0, 0, 0.78)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.3), transparent 44%, rgba(0, 0, 0, 0.2));
+}
+
+.game-card:hover,
+.game-card:focus-visible {
+  border-color: color-mix(in srgb, var(--card-accent) 78%, #fff7e6);
+  filter: saturate(1.08);
+  transform: translateY(-4px);
+}
+
+.game-card:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--card-accent) 82%, #fff7e6);
+  outline-offset: 4px;
+}
+
+.game-number,
+.game-name {
+  position: relative;
+  z-index: 1;
+  justify-self: start;
+  color: #fffaf0;
+  font-family: "Arial Black", Impact, "Noto Sans Hebrew", Arial, Helvetica, sans-serif;
+  font-weight: 1000;
+  letter-spacing: 0;
+  text-shadow:
+    0 3px 0 rgba(0, 0, 0, 0.62),
+    0 0 18px rgba(0, 0, 0, 0.82);
+}
+
+.game-number {
+  color: var(--card-accent);
+  font-size: clamp(1.75rem, 4.1vw, 3.3rem);
+  line-height: 0.9;
+}
+
+.game-name {
+  max-width: 100%;
+  font-size: clamp(1.65rem, 4.2vw, 3.6rem);
+  line-height: 0.95;
+}
+
+.game-name[dir="rtl"] {
+  justify-self: end;
+  text-align: right;
+}
+
+.game-card-memory {
+  --card-accent: #35d073;
+  --card-bg: url("games/memory/assets/images/DOR-TECHEM.jpg?v=2026-06-26-restore-memory-start-bg-1");
+  --card-position: 72% 25%;
+  --card-size: 165%;
+}
+
+.game-card-submarine {
+  --card-accent: #28d7ee;
+  --card-bg: url("games/submarine/assets/images/backgrounds/dor_army.jpeg?v=2026-06-26-restore-submarine-start-bg-1");
+  --card-position: 36% 15%;
+  --card-size: 155%;
+}
+
+.game-card-dino {
+  --card-accent: #efb34d;
+  --card-bg: url("games/dino/assets/images/backgrounds/dor-beer-sheva-start.jpg?v=2026-06-27-dino-start-bg-1");
+  --card-position: 63% 21%;
+  --card-size: 220%;
+}
+
+.game-card-brazio {
+  --card-accent: #8f6cff;
+  --card-bg: url("games/super-brazio/assets/images/backgrounds/dor-burger-king-start.webp?v=2026-06-27-dor-bk-top25-crop-1");
+  --card-position: 51% 5%;
+  --card-size: 178%;
+}
+
+@media (max-height: 720px) and (min-width: 761px) {
+  .portal-shell {
+    grid-template-rows: minmax(4.8rem, 0.32fr) auto minmax(1rem, 0.12fr);
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 7vw, 5.6rem);
+  }
+
+  .game-grid {
+    width: min(64rem, 100%);
+  }
+}
