@@ -1,6 +1,6 @@
 const STORAGE_KEY = "dor-bachelor-submarine-state-v1";
 const STORAGE_VERSION = 1;
-const APP_VERSION = "2026-06-28-final-score-left-right-stage2-volume-1";
+const APP_VERSION = "2026-06-28-start-cards-fit-volume-clamp-1";
 const ASSET_VERSION = "2026-06-27-miki-no-ghost-1";
 const SOUND_ASSET_VERSION = "2026-06-27-start-arcade-music-1";
 const URL_PARAMS = new URLSearchParams(window.location.search);
@@ -915,7 +915,7 @@ function fadeStageMusicTo(targetVolume, durationMs) {
   const step = (now) => {
     if (audio !== activeStageMusicAudio) return;
     const progress = Math.min(1, (now - startedAt) / safeDuration);
-    audio.volume = startVolume + (targetVolume - startVolume) * progress;
+    audio.volume = clamp(startVolume + (targetVolume - startVolume) * progress, 0, 1);
     if (progress < 1) {
       activeStageMusicFadeFrame = window.requestAnimationFrame(step);
       return;
@@ -1044,7 +1044,7 @@ function fadeStartMusicAudio(audio, targetVolume, durationMs, onComplete) {
   const step = (now) => {
     if (!startMusicFadeFrames.has(frameRef)) return;
     const progress = Math.min(1, (now - startedAt) / safeDuration);
-    audio.volume = startVolume + (targetVolume - startVolume) * progress;
+    audio.volume = clamp(startVolume + (targetVolume - startVolume) * progress, 0, 1);
 
     if (progress < 1) {
       frameRef.id = window.requestAnimationFrame(step);
