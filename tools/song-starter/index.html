@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Song Starter</title>
+    <link rel="stylesheet" href="style.css?v=2026-06-27-1">
+    <script src="app.js?v=2026-06-27-1" defer></script>
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="pageTitle">
+      <section class="panel">
+        <p class="eyebrow">Local song starter</p>
+        <h1 id="pageTitle">Choose a song</h1>
+
+        <div class="song-grid" aria-label="Song buttons">
+          <button class="song-button" type="button" data-song-id="song1Intro">
+            <span class="button-number">1</span>
+            <span class="button-label">Wicked Start</span>
+            <span class="button-note">Intro</span>
+          </button>
+          <button class="song-button" type="button" data-song-id="song1Full">
+            <span class="button-number">1</span>
+            <span class="button-label">Wicked (FULL!)</span>
+            <span class="button-note">Main</span>
+          </button>
+          <button class="song-button" type="button" data-song-id="song2">
+            <span class="button-number">2</span>
+            <span class="button-label">FREAK ME</span>
+          </button>
+          <button class="song-button" type="button" data-song-id="song3">
+            <span class="button-number">3</span>
+            <span class="button-label">BOMBASTIC</span>
+          </button>
+        </div>
+
+        <p id="statusText" class="status-text" aria-live="polite">Waiting for a song.</p>
+      </section>
+    </main>
+  </body>
+</html>

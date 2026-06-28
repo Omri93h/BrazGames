@@ -31,6 +31,26 @@ Core rules:
 - Use placeholders for personal images and sounds.
 - Do not commit real private photos or sounds unless the user explicitly provides and approves them.
 - After each game implementation, include manual validation steps.
+- Cross-game keyboard control rule: in two-team keyboard games, `החן יוספים, ועוזריהם` use `WASD`, and `הבראזים` use the arrow keys, unless the user explicitly changes this later.
+- Cross-game reset/admin rule: prefer no visible `איפוס תוצאה` button in the normal party UI unless the user explicitly asks for one in that game. `Command+D` should open the password-protected reset/admin popup, and reset must clear only the current game's localStorage key. Password remains `Chmir` unless the user changes it.
+- If a game raffles who starts, use a centered modal/overlay that alternates between the selected player names, not the team names. The chosen player's team becomes the starting side.
+- Rules/instructions modals should last 16 seconds with a circular loader and then advance automatically.
+- Rules/instructions modals should be skippable with `Space` while the modal is visible. Scope this shortcut to the rules phase only so it does not interfere with live gameplay controls.
+- In rules/instructions modals, controls must be labeled `מקשים:` and rendered as visible keycap clusters. Use `WASD` for WASD controls and real arrow keycaps like `↑ ← ↓ →` for arrow controls; do not show only the word `חצים`.
+- Cross-game opening-screen rule: follow the `dor-party-game-style` skill for every game start screen. The canonical character-select layout is: title panel on top, team character-card panels in the middle, and a bottom three-column fighter/action/fighter grid. Do not put fighter previews inside team panels, and do not let GIF intrinsic dimensions control layout. Visually verify that fighters are fully visible, the compact start button is centered, and the title panel spacing is balanced.
+- Cross-game player alias rule: legacy names for Pishoto must never be shown. The party-facing name is always `פישוטו` in Hebrew UI and `Pishoto` in English-facing text.
+- Cross-game display/projector rule: before party use, connect the actual TV/projector before opening the games, keep Chrome/browser zoom at 100%, use fullscreen, and verify each game on the real display. Do not make resolution-scaling or aspect-ratio gameplay changes without visual testing and user approval.
+
+Current Submarine Survival locked-in tuning:
+
+- Preserve the character-select start screen unless the user explicitly asks to change it.
+- Stage 2, `אנטישמים מלוחים`, uses Tucker/Candace faces and all of its enemy tiers are scaled down by 35%.
+- Stage 4, `The Revenge Of The Exiled`, uses Maor/Lior/Mosko/Tomer enemy faces. Tomer is a brightened local copy, Tomer faces right in the source, Lior faces left in the source, and Maor/Mosko are front-facing enough for normal mirroring.
+- Stage 5, `חמירוזון פריים`, has custom enemy behavior and is the final Submarine stage:
+  - `amazon.png` is always the smallest enemy, keeps its original logo colors, never hunts, never flashes, and never mirrors.
+  - `bezos_real.webp` appears as both medium yellow and large purple enemies.
+  - `bezos_southpark.webp` appears only after about 15 seconds as a giant red hunter with extra speed.
+- When adding or changing stage-specific enemy rules, update `current_focus.md`, `docs/games/FISH_SUBMARINE_PLAN.md`, `games/submarine/README.md`, and the relevant asset README.
 
 Workflow expectation:
 

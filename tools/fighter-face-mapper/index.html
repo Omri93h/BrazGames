@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>סימון פנים ל-Fighter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app">
+      <aside class="sidebar">
+        <header>
+          <p class="eyebrow">Dor Fighter Tool</p>
+          <h1>סימון פנים לפי פריים</h1>
+        </header>
+
+        <section class="panel">
+          <h2>טעינת Fighter</h2>
+          <label>
+            GIF
+            <input id="fighterInput" type="file" accept="image/gif">
+          </label>
+          <label>
+            שם session
+            <input id="sessionNameInput" type="text" placeholder="dor / magami / omri">
+          </label>
+          <button id="uploadButton" type="button">טען ופרק לפריימים</button>
+          <p id="uploadStatus" class="status"></p>
+        </section>
+
+        <section class="panel">
+          <h2>Sessions קיימים</h2>
+          <select id="sessionSelect"></select>
+          <button id="loadSessionButton" type="button">טען session</button>
+        </section>
+
+        <section class="panel">
+          <h2>Preset מהמשחק</h2>
+          <p class="status">טוען את פריימי מריו מה-spritesheet המקומי של Super Brazio.</p>
+          <button id="loadMarioPresetButton" type="button">טען Mario</button>
+          <p id="presetStatus" class="status"></p>
+        </section>
+
+        <section class="panel">
+          <h2>שמירה</h2>
+          <p class="status">הריבוע הוא עוגן מיקום בלבד. לא משנים גודל לפנים.</p>
+          <p id="completionStatus" class="status completion-status">אין session טעון</p>
+          <div id="missingFramesList" class="missing-frames-list" aria-live="polite"></div>
+          <button id="saveButton" type="button">Save</button>
+          <button id="saveDraftButton" class="secondary" type="button">שמור טיוטה</button>
+          <button id="downloadButton" type="button">Download JSON</button>
+          <p id="saveStatus" class="status"></p>
+        </section>
+
+        <section class="panel help">
+          <h2>איך עובדים</h2>
+          <ol>
+            <li>טוענים GIF של fighter.</li>
+            <li>גוררים מלבן סביב הפנים בפריים הנוכחי.</li>
+            <li>עוברים פריים ומסמנים שוב.</li>
+            <li>לוחצים Save.</li>
+          </ol>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p id="sessionTitle" class="session-title">לא נטען session</p>
+            <p id="frameCounter" class="frame-counter">Frame - / -</p>
+          </div>
+          <div class="nav">
+            <button id="prevButton" type="button">הקודם</button>
+            <button id="nextButton" type="button">הבא</button>
+            <button id="copyPreviousButton" type="button">העתק קודם</button>
+            <button id="copyRemainingButton" type="button">העתק לשאר</button>
+            <button id="clearFrameButton" type="button">נקה פריים</button>
+          </div>
+        </header>
+
+        <div class="micro-tools" aria-label="כוונון עדין">
+          <span>כוונון פריים נוכחי:</span>
+          <button class="secondary" type="button" data-nudge-x="-1" data-nudge-y="0">← 1px</button>
+          <button class="secondary" type="button" data-nudge-x="1" data-nudge-y="0">→ 1px</button>
+          <button class="secondary" type="button" data-nudge-x="0" data-nudge-y="-1">↑ 1px</button>
+          <button class="secondary" type="button" data-nudge-x="0" data-nudge-y="1">↓ 1px</button>
+          <small>Shift + חצים מזיז פיקסל. Alt + Shift + חצים מזיז 5px.</small>
+        </div>
+
+        <div id="stage" class="stage">
+          <canvas id="frameCanvas"></canvas>
+          <p id="emptyState" class="empty-state">טען GIF כדי להתחיל לסמן.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

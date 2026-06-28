@@ -1,0 +1,1383 @@
+{
+  "schemaVersion": 1,
+  "assetType": "shared-fighter-gifs",
+  "generatedFrom": "/Users/omrihaham/Downloads/*_FIGHTER.gif",
+  "notes": [
+    "Assets are stored for future character select / fighter-style idle use only.",
+    "No fighting game has been added to the active project scope.",
+    "Face boxes are rough automatic anchors and should be manually tuned after real head images are provided."
+  ],
+  "fighters": [
+    {
+      "id": "magami",
+      "displayName": "מגמי",
+      "team": "החן יוספים, ועוזריהם",
+      "sourceFilename": "MAGAMI_FIGHTER.gif",
+      "gif": "gifs/magami.gif",
+      "compositedGif": "composited/magami_with_face.gif",
+      "compositedPreviewGif": "composited/magami_preview.gif",
+      "faceImage": "../faces/magami_face_cut.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/magami/session.json",
+      "notes": "Generated from the manual Face Mapper session on 2026-06-16. The face source was rotated 23 degrees clockwise on 2026-06-17 so the eyes sit level, then horizontally mirrored for the fighter, kept at one fixed 284x342px size across all frames, bottom-center aligned to each marked box, and corrected with a fixed x:+20 y:-18px global offset. On 2026-06-19 the source face cutout was cleaned to remove the blue/gray top hair matte without changing size or placement. Preview uses a fixed 680x1320 crop so the GIF canvas does not shift in the start screen or cursor.",
+      "faceAnchorPreview": "previews/magami_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 4,
+      "compositedFrameCount": 4,
+      "compositedFaceSize": {
+        "width": 284,
+        "height": 342
+      },
+      "compositedPreviewSize": {
+        "width": 680,
+        "height": 1320
+      },
+      "compositedFaceMirrored": true,
+      "compositedFaceOffset": {
+        "x": 20,
+        "y": -18
+      },
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/magami_face_card.webp",
+        "fighterGif": "games/memory/assets/images/characters/magami_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/magami_fighter_cursor.gif"
+      },
+      "faceImageTransform": "flop",
+      "gifDisposal": "Background",
+      "faceAnchorDetection": {
+        "method": "manual-face-mapper-bottom-anchor-v1",
+        "description": "Manual per-frame boxes from tools/fighter-face-mapper/sessions/magami/session.json. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 300,
+            "y": 967,
+            "width": 456,
+            "height": 818
+          },
+          "estimatedFaceBox": {
+            "x": 468,
+            "y": 983,
+            "width": 119,
+            "height": 147
+          },
+          "manualFaceBox": {
+            "x": 492,
+            "y": 973,
+            "width": 115,
+            "height": 133
+          },
+          "estimatedFaceAnchor": {
+            "x": 528,
+            "y": 1056
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 290,
+            "y": 954,
+            "width": 456,
+            "height": 837
+          },
+          "estimatedFaceBox": {
+            "x": 458,
+            "y": 971,
+            "width": 119,
+            "height": 151
+          },
+          "manualFaceBox": {
+            "x": 480,
+            "y": 956,
+            "width": 114,
+            "height": 134
+          },
+          "estimatedFaceAnchor": {
+            "x": 518,
+            "y": 1046
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 286,
+            "y": 942,
+            "width": 455,
+            "height": 855
+          },
+          "estimatedFaceBox": {
+            "x": 454,
+            "y": 959,
+            "width": 118,
+            "height": 154
+          },
+          "manualFaceBox": {
+            "x": 480,
+            "y": 941,
+            "width": 106,
+            "height": 128
+          },
+          "estimatedFaceAnchor": {
+            "x": 513,
+            "y": 1036
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 282,
+            "y": 957,
+            "width": 455,
+            "height": 837
+          },
+          "estimatedFaceBox": {
+            "x": 450,
+            "y": 974,
+            "width": 118,
+            "height": 151
+          },
+          "manualFaceBox": {
+            "x": 476,
+            "y": 957,
+            "width": 111,
+            "height": 134
+          },
+          "estimatedFaceAnchor": {
+            "x": 509,
+            "y": 1050
+          },
+          "confidence": "manual"
+        }
+      ],
+      "faceImageRotationDegrees": 23
+    },
+    {
+      "id": "omri",
+      "displayName": "עומרי",
+      "team": "החן יוספים, ועוזריהם",
+      "sourceFilename": "OMRI_FIGHTER.gif",
+      "gif": "gifs/omri.gif",
+      "faceAnchorPreview": "previews/omri_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 9,
+      "faceAnchorDetection": {
+        "method": "manual-face-mapper-bottom-anchor-v1",
+        "description": "Manual per-frame boxes from the saved Face Mapper session. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 277,
+            "y": 984,
+            "width": 486,
+            "height": 814
+          },
+          "estimatedFaceBox": {
+            "x": 457,
+            "y": 1000,
+            "width": 126,
+            "height": 147
+          },
+          "estimatedFaceAnchor": {
+            "x": 520,
+            "y": 1074
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 532,
+            "y": 1028,
+            "width": 96,
+            "height": 127
+          }
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 276,
+            "y": 993,
+            "width": 458,
+            "height": 805
+          },
+          "estimatedFaceBox": {
+            "x": 446,
+            "y": 1009,
+            "width": 119,
+            "height": 145
+          },
+          "estimatedFaceAnchor": {
+            "x": 506,
+            "y": 1082
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 524,
+            "y": 1036,
+            "width": 103,
+            "height": 138
+          }
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 274,
+            "y": 1046,
+            "width": 514,
+            "height": 758
+          },
+          "estimatedFaceBox": {
+            "x": 464,
+            "y": 1061,
+            "width": 134,
+            "height": 136
+          },
+          "estimatedFaceAnchor": {
+            "x": 531,
+            "y": 1129
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 520,
+            "y": 1050,
+            "width": 120,
+            "height": 140
+          }
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 272,
+            "y": 1002,
+            "width": 486,
+            "height": 805
+          },
+          "estimatedFaceBox": {
+            "x": 452,
+            "y": 1018,
+            "width": 126,
+            "height": 145
+          },
+          "estimatedFaceAnchor": {
+            "x": 515,
+            "y": 1090
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 522,
+            "y": 1048,
+            "width": 109,
+            "height": 128
+          }
+        },
+        {
+          "frame": 4,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 268,
+            "y": 1002,
+            "width": 458,
+            "height": 814
+          },
+          "estimatedFaceBox": {
+            "x": 438,
+            "y": 1018,
+            "width": 119,
+            "height": 147
+          },
+          "estimatedFaceAnchor": {
+            "x": 498,
+            "y": 1092
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 506,
+            "y": 1051,
+            "width": 118,
+            "height": 126
+          }
+        },
+        {
+          "frame": 5,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 269,
+            "y": 1049,
+            "width": 505,
+            "height": 767
+          },
+          "estimatedFaceBox": {
+            "x": 456,
+            "y": 1064,
+            "width": 131,
+            "height": 138
+          },
+          "estimatedFaceAnchor": {
+            "x": 522,
+            "y": 1133
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 510,
+            "y": 1053,
+            "width": 115,
+            "height": 132
+          }
+        },
+        {
+          "frame": 6,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 263,
+            "y": 1014,
+            "width": 486,
+            "height": 805
+          },
+          "estimatedFaceBox": {
+            "x": 443,
+            "y": 1030,
+            "width": 126,
+            "height": 145
+          },
+          "estimatedFaceAnchor": {
+            "x": 506,
+            "y": 1102
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 521,
+            "y": 1065,
+            "width": 98,
+            "height": 126
+          }
+        },
+        {
+          "frame": 7,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 262,
+            "y": 1024,
+            "width": 458,
+            "height": 795
+          },
+          "estimatedFaceBox": {
+            "x": 432,
+            "y": 1040,
+            "width": 119,
+            "height": 143
+          },
+          "estimatedFaceAnchor": {
+            "x": 492,
+            "y": 1112
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 514,
+            "y": 1065,
+            "width": 109,
+            "height": 131
+          }
+        },
+        {
+          "frame": 8,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 260,
+            "y": 1055,
+            "width": 506,
+            "height": 767
+          },
+          "estimatedFaceBox": {
+            "x": 447,
+            "y": 1070,
+            "width": 132,
+            "height": 138
+          },
+          "estimatedFaceAnchor": {
+            "x": 513,
+            "y": 1139
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 503,
+            "y": 1063,
+            "width": 112,
+            "height": 134
+          }
+        }
+      ],
+      "compositedGif": "composited/omri_with_face.gif",
+      "compositedPreviewGif": "composited/omri_preview.gif",
+      "faceImage": "../faces/omri_face.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/omri/session.json",
+      "notes": "Generated from the manual Face Mapper session on 2026-06-18. On 2026-06-18 the Omri face source was horizontally mirrored for Memory portraits and fighter assets. The face is kept at one fixed 229x308px size across all frames and bottom-center aligned to each marked box. On 2026-06-19 the head was moved 5px up with fixed offset x:0 y:-5, then the source and Memory card cutouts were cleaned to remove the colored top hair matte without changing size or placement. Memory preview and cursor use a fixed 660x1080 crop.",
+      "compositedFrameCount": 9,
+      "compositedFaceSize": {
+        "width": 229,
+        "height": 308
+      },
+      "compositedPreviewSize": {
+        "width": 660,
+        "height": 1080
+      },
+      "compositedFaceMirrored": true,
+      "compositedFaceOffset": {
+        "x": 0,
+        "y": -5
+      },
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/omri_face_card.webp",
+        "fighterGif": "games/memory/assets/images/characters/omri_fighter_with_face.gif",
+        "fighterPreviewGif": "games/memory/assets/images/characters/omri_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/omri_fighter_cursor.gif"
+      },
+      "gifDisposal": "Background",
+      "faceImageTransform": "flop"
+    },
+    {
+      "id": "meser",
+      "displayName": "מסר",
+      "team": "החן יוספים, ועוזריהם",
+      "sourceFilename": "MESSER_FIGHTER.gif",
+      "gif": "gifs/meser.gif",
+      "compositedGif": "composited/messer_with_face.gif",
+      "compositedPreviewGif": "composited/messer_preview.gif",
+      "faceImage": "../faces/messer_face.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/messer/session.json",
+      "notes": "Source filename uses MESSER; project id uses meser. Current composited Memory preview intentionally uses only frames 0-5. The face is mirrored and composited at one fixed size across all frames: 219x315px. Face anchors for frames 0-5 were shifted 5px left for Messer alignment. 10-frame and previous 6-frame backups are kept under composited/backups and memory character backups.",
+      "faceAnchorPreview": "previews/meser_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 10,
+      "compositedFrameCount": 6,
+      "compositedFrameRange": "0-5",
+      "compositedFaceSize": {
+        "width": 219,
+        "height": 315
+      },
+      "compositedFaceMirrored": true,
+      "compositedFaceOffset": {
+        "x": -5,
+        "y": 0
+      },
+      "faceAnchorDetection": {
+        "method": "imagemagick-trim-top-center-v1",
+        "description": "Rough automatic estimate based on the top-center of the trimmed sprite bounds per frame. Tune before compositing real heads."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 345,
+            "y": 982,
+            "width": 472,
+            "height": 849
+          },
+          "estimatedFaceBox": {
+            "x": 520,
+            "y": 999,
+            "width": 123,
+            "height": 153
+          },
+          "estimatedFaceAnchor": {
+            "x": 582,
+            "y": 1076
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 302,
+            "y": 1003,
+            "width": 524,
+            "height": 828
+          },
+          "estimatedFaceBox": {
+            "x": 496,
+            "y": 1020,
+            "width": 136,
+            "height": 149
+          },
+          "estimatedFaceAnchor": {
+            "x": 564,
+            "y": 1094
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 301,
+            "y": 1038,
+            "width": 513,
+            "height": 796
+          },
+          "estimatedFaceBox": {
+            "x": 491,
+            "y": 1054,
+            "width": 133,
+            "height": 143
+          },
+          "estimatedFaceAnchor": {
+            "x": 558,
+            "y": 1126
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 298,
+            "y": 1006,
+            "width": 523,
+            "height": 828
+          },
+          "estimatedFaceBox": {
+            "x": 492,
+            "y": 1023,
+            "width": 136,
+            "height": 149
+          },
+          "estimatedFaceAnchor": {
+            "x": 560,
+            "y": 1098
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 4,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 302,
+            "y": 982,
+            "width": 514,
+            "height": 849
+          },
+          "estimatedFaceBox": {
+            "x": 492,
+            "y": 999,
+            "width": 134,
+            "height": 153
+          },
+          "estimatedFaceAnchor": {
+            "x": 559,
+            "y": 1076
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 5,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 290,
+            "y": 988,
+            "width": 535,
+            "height": 849
+          },
+          "estimatedFaceBox": {
+            "x": 488,
+            "y": 1005,
+            "width": 139,
+            "height": 153
+          },
+          "estimatedFaceAnchor": {
+            "x": 558,
+            "y": 1082
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 6,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 279,
+            "y": 1006,
+            "width": 544,
+            "height": 828
+          },
+          "estimatedFaceBox": {
+            "x": 480,
+            "y": 1023,
+            "width": 141,
+            "height": 149
+          },
+          "estimatedFaceAnchor": {
+            "x": 550,
+            "y": 1098
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 7,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 285,
+            "y": 1035,
+            "width": 555,
+            "height": 796
+          },
+          "estimatedFaceBox": {
+            "x": 490,
+            "y": 1051,
+            "width": 144,
+            "height": 143
+          },
+          "estimatedFaceAnchor": {
+            "x": 562,
+            "y": 1122
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 8,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 300,
+            "y": 1000,
+            "width": 544,
+            "height": 828
+          },
+          "estimatedFaceBox": {
+            "x": 502,
+            "y": 1017,
+            "width": 141,
+            "height": 149
+          },
+          "estimatedFaceAnchor": {
+            "x": 572,
+            "y": 1092
+          },
+          "confidence": "rough-auto"
+        },
+        {
+          "frame": 9,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 300,
+            "y": 1000,
+            "width": 544,
+            "height": 828
+          },
+          "estimatedFaceBox": {
+            "x": 502,
+            "y": 1017,
+            "width": 141,
+            "height": 149
+          },
+          "estimatedFaceAnchor": {
+            "x": 572,
+            "y": 1092
+          },
+          "confidence": "rough-auto"
+        }
+      ],
+      "memoryTrialAssets": {
+        "fighterCursorGif": "games/memory/assets/images/characters/messer_fighter_cursor.gif"
+      }
+    },
+    {
+      "id": "plato",
+      "displayName": "פלטו",
+      "team": "החן יוספים, ועוזריהם",
+      "sourceFilename": "PLATO_FIGHTER.gif",
+      "gif": "gifs/plato.gif",
+      "compositedGif": "composited/plato_with_face.gif",
+      "compositedPreviewGif": "composited/plato_preview.gif",
+      "faceImage": "../faces/plato_face.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/plato/session.json",
+      "notes": "Generated from the manual Face Mapper session on 2026-06-18. The face is kept at one fixed 272x397px size across all frames, not mirrored, and bottom-center aligned to each marked box. Preview and cursor use a fixed 760x1080 crop so the GIF canvas does not shift in the Memory start screen or cursor.",
+      "faceAnchorPreview": "previews/plato_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 4,
+      "compositedFrameCount": 4,
+      "compositedFaceSize": {
+        "width": 272,
+        "height": 397
+      },
+      "compositedPreviewSize": {
+        "width": 760,
+        "height": 1080
+      },
+      "compositedFaceMirrored": false,
+      "compositedFaceOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/plato_face_card.webp",
+        "fighterGif": "games/memory/assets/images/characters/plato_fighter_with_face.gif",
+        "fighterPreviewGif": "games/memory/assets/images/characters/plato_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/plato_fighter_cursor.gif"
+      },
+      "gifDisposal": "Background",
+      "faceAnchorDetection": {
+        "method": "manual-face-mapper-bottom-anchor-v1",
+        "description": "Manual per-frame boxes from tools/fighter-face-mapper/sessions/plato/session.json. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 320,
+            "y": 1071,
+            "width": 572,
+            "height": 751
+          },
+          "estimatedFaceBox": {
+            "x": 532,
+            "y": 1086,
+            "width": 149,
+            "height": 135
+          },
+          "manualFaceBox": {
+            "x": 642,
+            "y": 1174,
+            "width": 127,
+            "height": 125
+          },
+          "estimatedFaceAnchor": {
+            "x": 606,
+            "y": 1154
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 328,
+            "y": 1059,
+            "width": 563,
+            "height": 769
+          },
+          "estimatedFaceBox": {
+            "x": 536,
+            "y": 1074,
+            "width": 146,
+            "height": 138
+          },
+          "manualFaceBox": {
+            "x": 633,
+            "y": 1164,
+            "width": 135,
+            "height": 135
+          },
+          "estimatedFaceAnchor": {
+            "x": 609,
+            "y": 1143
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 335,
+            "y": 1041,
+            "width": 563,
+            "height": 787
+          },
+          "estimatedFaceBox": {
+            "x": 544,
+            "y": 1057,
+            "width": 146,
+            "height": 142
+          },
+          "manualFaceBox": {
+            "x": 632,
+            "y": 1141,
+            "width": 128,
+            "height": 150
+          },
+          "estimatedFaceAnchor": {
+            "x": 617,
+            "y": 1128
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 340,
+            "y": 1068,
+            "width": 563,
+            "height": 769
+          },
+          "estimatedFaceBox": {
+            "x": 548,
+            "y": 1083,
+            "width": 146,
+            "height": 138
+          },
+          "manualFaceBox": {
+            "x": 650,
+            "y": 1165,
+            "width": 130,
+            "height": 147
+          },
+          "estimatedFaceAnchor": {
+            "x": 621,
+            "y": 1152
+          },
+          "confidence": "manual"
+        }
+      ]
+    },
+    {
+      "id": "miki",
+      "displayName": "מיקי",
+      "team": "הבראזים",
+      "sourceFilename": "MIKI_FIGHTER.gif",
+      "gif": "gifs/miki.gif",
+      "faceAnchorPreview": "previews/miki_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 4,
+      "faceAnchorDetection": {
+        "method": "rough-manifest-bottom-anchor-v1",
+        "description": "Rough automatic boxes promoted from fighter_manifest estimates because no complete manual session existed. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 229,
+            "y": 928,
+            "width": 649,
+            "height": 859
+          },
+          "estimatedFaceBox": {
+            "x": 469,
+            "y": 945,
+            "width": 169,
+            "height": 155
+          },
+          "estimatedFaceAnchor": {
+            "x": 554,
+            "y": 1022
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 469,
+            "y": 945,
+            "width": 169,
+            "height": 155
+          }
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 229,
+            "y": 962,
+            "width": 649,
+            "height": 828
+          },
+          "estimatedFaceBox": {
+            "x": 469,
+            "y": 979,
+            "width": 169,
+            "height": 149
+          },
+          "estimatedFaceAnchor": {
+            "x": 554,
+            "y": 1054
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 469,
+            "y": 979,
+            "width": 169,
+            "height": 149
+          }
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 208,
+            "y": 987,
+            "width": 702,
+            "height": 797
+          },
+          "estimatedFaceBox": {
+            "x": 468,
+            "y": 1003,
+            "width": 183,
+            "height": 143
+          },
+          "estimatedFaceAnchor": {
+            "x": 560,
+            "y": 1074
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 468,
+            "y": 1003,
+            "width": 183,
+            "height": 143
+          }
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 208,
+            "y": 987,
+            "width": 702,
+            "height": 797
+          },
+          "estimatedFaceBox": {
+            "x": 468,
+            "y": 1003,
+            "width": 183,
+            "height": 143
+          },
+          "estimatedFaceAnchor": {
+            "x": 560,
+            "y": 1074
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 468,
+            "y": 1003,
+            "width": 183,
+            "height": 143
+          }
+        }
+      ],
+      "compositedGif": "composited/miki_with_face.gif",
+      "compositedPreviewGif": "composited/miki_preview.gif",
+      "faceImage": "../faces/miki_face.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/miki/session.json",
+      "notes": "Generated on 2026-06-18 from rough automatic manifest anchors because the saved Face Mapper session was still a draft with no mapped frames. The draft was backed up under tools/fighter-face-mapper/sessions/miki/backups. On 2026-06-18 the Miki source face was rotated 12 degrees counterclockwise to read straighter before compositing. On 2026-06-19 the fighter was rebuilt with a larger fixed 245x320px face, x:+86 y:+66 offset, and a fixed transparent mask clearing the original sprite head before compositing, so the source head does not appear behind Miki. The source face cutout was cleaned to remove the blue/gray matte edge, and the Memory card face is mirrored from that cleaned source. Later on 2026-06-19, only frame 3 received an extra y:+10 correction, then a follow-up changed frame 3 to y:+20 so the chin sits lower when the fists are highest. Memory preview and cursor use a fixed 820x1080 crop. On 2026-06-19 the Memory preview/cursor content was scaled to 106% from a top anchor so Miki's feet/ground sit closer to the bottom frame line like the other fighters, reducing preview bottom margin from about 110-116px to about 52-58px. Later on 2026-06-19, all frames were lowered another 8px by changing the fixed offset to x:+86 y:+74, while frame 3 kept its extra y:+20 correction. A follow-up nudged frame 2 by x:+4 y:+5 so the head sits slightly lower and right in the existing preview sequence. On 2026-06-26 the approved brighter Miki face-card treatment was promoted to the shared source, all game face-card copies, the Memory full fighter, the shared preview GIF, and the Memory cursor without changing fighter anchors.",
+      "mirrorCorrectionNotes": "On 2026-06-27, corrected a bad whole-fighter mirror by restoring the original body direction and replacing only the head overlay with the mirrored bright face. A follow-up rebuilt Miki from the original fighter GIF, cleared the original head area, and then composited the mirrored face so no previous Miki head remains behind the front head. Do not horizontally mirror the full Miki fighter GIFs for a face-direction request, and do not overlay a new Miki head onto an already-composited Miki GIF.",
+      "faceImageRotationDegrees": -12,
+      "compositedFrameCount": 4,
+      "compositedFaceSize": {
+        "width": 245,
+        "height": 320
+      },
+      "compositedPreviewSize": {
+        "width": 820,
+        "height": 1080
+      },
+      "memoryPreviewContentScale": 1.06,
+      "compositedFaceMirrored": true,
+      "compositedFaceOffset": {
+        "x": 86,
+        "y": 74
+      },
+      "compositedPerFrameOffsets": {
+        "2": {
+          "x": 4,
+          "y": 5
+        },
+        "3": {
+          "x": 0,
+          "y": 20
+        }
+      },
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/miki_face_card.webp",
+        "fighterGif": "games/memory/assets/images/characters/miki_fighter_with_face.gif",
+        "fighterPreviewGif": "games/memory/assets/images/characters/miki_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/miki_fighter_cursor.gif"
+      },
+      "gifDisposal": "Background"
+    },
+    {
+      "id": "dor",
+      "displayName": "דור",
+      "team": "הבראזים",
+      "sourceFilename": "DOR_FIGHTER.gif",
+      "gif": "gifs/dor.gif",
+      "faceAnchorPreview": "previews/dor_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 4,
+      "faceAnchorDetection": {
+        "method": "manual-face-mapper-bottom-anchor-v1",
+        "description": "Manual per-frame boxes from tools/fighter-face-mapper/sessions/dor/session.json. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "manualFaceBox": {
+            "x": 575,
+            "y": 991,
+            "width": 122,
+            "height": 164
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "manualFaceBox": {
+            "x": 579,
+            "y": 995,
+            "width": 125,
+            "height": 173
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "manualFaceBox": {
+            "x": 568,
+            "y": 996,
+            "width": 137,
+            "height": 185
+          },
+          "confidence": "manual"
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "manualFaceBox": {
+            "x": 585,
+            "y": 998,
+            "width": 112,
+            "height": 176
+          },
+          "confidence": "manual"
+        }
+      ],
+      "faceImage": "assets/characters/faces/dor_face_cut.webp",
+      "compositedGif": "assets/characters/fighters/composited/dor_with_face.gif",
+      "compositedFaceSize": {
+        "width": 296,
+        "height": 431
+      },
+      "compositedFaceScale": 0.9,
+      "compositedFaceMirrored": true,
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/dor_face_cut.webp",
+        "fighterGif": "games/memory/assets/images/characters/dor_fighter_with_face.gif",
+        "fighterPreviewGif": "games/memory/assets/images/characters/dor_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/dor_fighter_cursor.gif"
+      },
+      "faceMapperSession": "tools/fighter-face-mapper/sessions/dor/session.json",
+      "faceImageTransform": "flop",
+      "gifDisposal": "Background",
+      "compositingNotes": "Generated from manual face mapper boxes. On 2026-06-18, Dor's mirrored face overlay was intentionally reduced to 90% of the source cutout, fixed at 296x431px, then bottom-center aligned to each marked box so the head reads proportional to the other Memory fighters. GIF frames use Background disposal so transparent frames do not accumulate."
+    },
+    {
+      "id": "gabo",
+      "displayName": "גבו",
+      "team": "הבראזים",
+      "sourceFilename": "GABO_FIGHTER.gif",
+      "gif": "gifs/gabo.gif",
+      "notes": "Source filename uses GABO; project character id uses gabo. Generated from the manual Face Mapper session on 2026-06-18. The face is kept at one fixed 232x310px size across all frames, not mirrored, and bottom-center aligned to each marked box. On 2026-06-19 the fighter face was reduced from 250x334px and rebuilt with fixed y:+23px compositor offset so frames 1-2 keep at least 13px top alpha margin instead of touching the crop edge. The Memory character-card face is mirrored/flopped separately; the fighter source remains unmirrored. Memory preview and cursor use a fixed 760x1080 crop.",
+      "faceAnchorPreview": "previews/gabo_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 3,
+      "faceAnchorDetection": {
+        "method": "manual-face-mapper-bottom-anchor-v1",
+        "description": "Manual per-frame boxes from the saved Face Mapper session. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 310,
+            "y": 974,
+            "width": 520,
+            "height": 857
+          },
+          "estimatedFaceBox": {
+            "x": 502,
+            "y": 991,
+            "width": 135,
+            "height": 154
+          },
+          "estimatedFaceAnchor": {
+            "x": 570,
+            "y": 1068
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 565,
+            "y": 976,
+            "width": 117,
+            "height": 177
+          }
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 309,
+            "y": 950,
+            "width": 547,
+            "height": 875
+          },
+          "estimatedFaceBox": {
+            "x": 512,
+            "y": 968,
+            "width": 142,
+            "height": 158
+          },
+          "estimatedFaceAnchor": {
+            "x": 583,
+            "y": 1047
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 552,
+            "y": 954,
+            "width": 114,
+            "height": 166
+          }
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 309,
+            "y": 950,
+            "width": 602,
+            "height": 884
+          },
+          "estimatedFaceBox": {
+            "x": 532,
+            "y": 968,
+            "width": 157,
+            "height": 159
+          },
+          "estimatedFaceAnchor": {
+            "x": 610,
+            "y": 1048
+          },
+          "confidence": "manual",
+          "manualFaceBox": {
+            "x": 537,
+            "y": 950,
+            "width": 121,
+            "height": 171
+          }
+        }
+      ],
+      "compositedGif": "composited/gabo_with_face.gif",
+      "compositedPreviewGif": "composited/gabo_preview.gif",
+      "faceImage": "../faces/gabo_face.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/gabo/session.json",
+      "compositedFrameCount": 3,
+      "compositedFaceSize": {
+        "width": 232,
+        "height": 310
+      },
+      "compositedPreviewSize": {
+        "width": 760,
+        "height": 1080
+      },
+      "compositedFaceMirrored": false,
+      "compositedFaceOffset": {
+        "x": 0,
+        "y": 23
+      },
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/gabo_face_card.webp",
+        "fighterGif": "games/memory/assets/images/characters/gabo_fighter_with_face.gif",
+        "fighterPreviewGif": "games/memory/assets/images/characters/gabo_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/gabo_fighter_cursor.gif"
+      },
+      "gifDisposal": "Background"
+    },
+    {
+      "id": "pishuto",
+      "displayName": "פישוטו",
+      "team": "הבראזים",
+      "sourceFilename": "PISHOTO_FIGHTER.gif",
+      "gif": "gifs/pishuto.gif",
+      "notes": "Used as the Memory פישוטו / Pishoto asset. User may refer to this character/person as Orian / אוריין; this maps to project character id pishuto, not omri. Generated on 2026-06-18 from rough automatic manifest anchors because no complete manual פישוטו Face Mapper session existed. The face is kept at one fixed 260x328px size across all frames, not mirrored, and bottom-center aligned to each estimated box. On 2026-06-18 the Pishoto face cutout was cleaned to remove the blue edge around the hair, then rebuilt with a fixed x:+50 y:+58px compositor offset; because brazim fighters are CSS-mirrored in Memory, this displayed the head left/down on the actual screen. On 2026-06-19 the Y offset was raised to +34px so the head sits above the chest. On 2026-06-19 the source face cutout was cleaned again to remove the top gray/cyan hair matte without changing size, placement, or anchors. Later on 2026-06-19 the top hair edge was cleaned more specifically: semi-transparent cool residue was removed and opaque blue/cyan hair-edge pixels were darkened to neutral brown/charcoal. A stricter follow-up pass on 2026-06-19 darkened the upper hair matte further and rebuilt the Memory card, preview, and cursor so no תכלת/כחול remains inside the hair silhouette. On 2026-06-26 a bad horizontal-band version was found in the runtime source/card and preview assets; Pishoto was restored from the clean pre-stripe source, then rebuilt. Game face-card copies are flopped/mirrored separately, while the fighter source remains unmirrored for CSS-mirrored brazim previews. Avoid future broad top-shadow or horizontal-band cleanup passes on this face. Memory preview and cursor use a fixed 720x1080 crop.",
+      "faceAnchorPreview": "previews/pishuto_face_anchor_preview.png",
+      "naturalSize": {
+        "width": 1080,
+        "height": 1920
+      },
+      "frameCount": 4,
+      "faceAnchorDetection": {
+        "method": "rough-manifest-bottom-anchor-v1",
+        "description": "Rough automatic boxes promoted from fighter_manifest estimates because no complete manual session existed. Boxes are bottom-center anchors only; face image is not resized."
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 352,
+            "y": 973,
+            "width": 480,
+            "height": 873
+          },
+          "estimatedFaceBox": {
+            "x": 530,
+            "y": 990,
+            "width": 125,
+            "height": 157
+          },
+          "estimatedFaceAnchor": {
+            "x": 592,
+            "y": 1068
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 530,
+            "y": 990,
+            "width": 125,
+            "height": 157
+          }
+        },
+        {
+          "frame": 1,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 337,
+            "y": 983,
+            "width": 496,
+            "height": 866
+          },
+          "estimatedFaceBox": {
+            "x": 520,
+            "y": 1000,
+            "width": 129,
+            "height": 156
+          },
+          "estimatedFaceAnchor": {
+            "x": 584,
+            "y": 1078
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 520,
+            "y": 1000,
+            "width": 129,
+            "height": 156
+          }
+        },
+        {
+          "frame": 2,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 341,
+            "y": 986,
+            "width": 488,
+            "height": 866
+          },
+          "estimatedFaceBox": {
+            "x": 522,
+            "y": 1003,
+            "width": 127,
+            "height": 156
+          },
+          "estimatedFaceAnchor": {
+            "x": 586,
+            "y": 1081
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 522,
+            "y": 1003,
+            "width": 127,
+            "height": 156
+          }
+        },
+        {
+          "frame": 3,
+          "delayCs": 20,
+          "spriteBox": {
+            "x": 351,
+            "y": 989,
+            "width": 480,
+            "height": 866
+          },
+          "estimatedFaceBox": {
+            "x": 528,
+            "y": 1006,
+            "width": 125,
+            "height": 156
+          },
+          "estimatedFaceAnchor": {
+            "x": 590,
+            "y": 1084
+          },
+          "confidence": "rough-auto",
+          "roughFaceBox": {
+            "x": 528,
+            "y": 1006,
+            "width": 125,
+            "height": 156
+          }
+        }
+      ],
+      "projectCharacterId": "pishuto",
+      "compositedGif": "composited/pishuto_with_face.gif",
+      "compositedPreviewGif": "composited/pishuto_preview.gif",
+      "faceImage": "../faces/pishuto_face.webp",
+      "faceMapperSession": "../../../tools/fighter-face-mapper/sessions/pishuto/session.json",
+      "compositedFrameCount": 4,
+      "compositedFaceSize": {
+        "width": 260,
+        "height": 328
+      },
+      "compositedPreviewSize": {
+        "width": 720,
+        "height": 1080
+      },
+      "compositedFaceMirrored": false,
+      "compositedFaceOffset": {
+        "x": 50,
+        "y": 34
+      },
+      "memoryTrialAssets": {
+        "faceImage": "games/memory/assets/images/characters/pishuto_face_card.webp",
+        "fighterGif": "games/memory/assets/images/characters/pishuto_fighter_with_face.gif",
+        "fighterPreviewGif": "games/memory/assets/images/characters/pishuto_fighter_preview.gif",
+        "fighterCursorGif": "games/memory/assets/images/characters/pishuto_fighter_cursor.gif"
+      },
+      "gifDisposal": "Background"
+    }
+  ]
+}

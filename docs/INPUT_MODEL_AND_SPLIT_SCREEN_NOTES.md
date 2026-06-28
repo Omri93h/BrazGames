@@ -38,8 +38,9 @@ Desired model:
 
 - One shared screen.
 - Two player characters if feasible.
-- Player 1 controls: `WASD`.
-- Player 2 controls: arrow keys.
+- החן יוספים, ועוזריהם controls: `WASD`.
+- הבראזים controls: arrow keys.
+- This control mapping is a cross-game rule for future two-team keyboard games unless the user explicitly changes it.
 
 This is browser-friendly and should be easier than independent mice.
 
@@ -54,11 +55,20 @@ The final layout is unresolved. The theme is Dor running away from Be'er Sheva t
 
 ## Super Brazio
 
-Possible models:
+User-approved planning direction as of 2026-06-16:
 
-- Single-player first is acceptable.
-- Two-player mode only if explicitly approved later.
-- Split screen only if it does not add major complexity.
+- Two-player split-screen race is the planned MVP, pending final plan approval.
+- The active game screen should be split vertically into two equal platformer worlds.
+- Both sides run the same short Mario-style level at the same time.
+- There are no rounds.
+- The first side to reach Princess Daniel / Golden Visa wins immediately.
+- החן יוספים, ועוזריהם use `WASD`.
+- הבראזים use the arrow keys.
+
+Risks to validate during the implementation spike:
+
+- The chosen Mario-style source engine may assume one global player/canvas/input state.
+- Two simultaneous players may expose keyboard ghosting on the party laptop.
+- Half-width platformer canvases may need tuned camera zoom so the player and obstacles remain projector-readable.
 
 Controls must be tested on the actual party laptop for every implemented game.
-

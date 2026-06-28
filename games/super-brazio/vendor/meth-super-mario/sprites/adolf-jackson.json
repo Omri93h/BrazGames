@@ -1,0 +1,7 @@
+{
+    "imageURL": "/img/adolf-jackson.png",
+
+    "frames": [
+        { "name": "idle", "rect": [0, 0, 24, 24] }
+    ]
+}

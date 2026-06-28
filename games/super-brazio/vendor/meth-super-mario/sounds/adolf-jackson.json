@@ -1,0 +1,10 @@
+{
+    "fx": {
+        "hee-hee": {
+            "url": "/audio/fx/jackson-hee-hee.mp3"
+        },
+        "presence": {
+            "url": "/audio/fx/jackson-presence.mp3"
+        }
+    }
+}

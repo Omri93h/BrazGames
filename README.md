@@ -17,8 +17,25 @@ Runtime goals:
 
 - No internet required during the party.
 - No external hosted assets at runtime.
+- A static root portal at `http://localhost:3000` can be used to choose between the four games.
 - Each approved game has its own local port.
 - Custom images and sounds are replaceable from local asset folders.
 - Setup stays simple enough to trust in a party environment.
+
+## Run The Portal Locally
+
+From the repository root:
+
+```sh
+python3 -m http.server 3000
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+The portal links to the four approved games under `games/` and does not reset their localStorage state.
 
 This is a private local party project, not a public commercial product. Use placeholders in the repo unless real private photos or sounds are explicitly provided and approved.
