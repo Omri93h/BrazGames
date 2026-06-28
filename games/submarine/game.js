@@ -1,4 +1,5 @@
 const STORAGE_KEY = "dor-bachelor-submarine-state-v1";
+const PORTAL_FRESH_START_PREFIX = "the-braz-games:fresh-start:";
 const STORAGE_VERSION = 1;
 const APP_VERSION = "2026-06-28-submarine-dor-face-size-1";
 const ASSET_VERSION = "2026-06-27-miki-no-ghost-1";
@@ -620,6 +621,14 @@ async function initialize() {
     showStartScreen();
     freezeIfPageAlreadyHidden();
     return;
+  }
+
+  if (consumePortalFreshStartFlag()) {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      debugWarn("portal-storage-reset-failed");
+    }
   }
 
   preloadAssets();
@@ -4535,6 +4544,17 @@ function loadSavedState() {
       debugWarn("storage-parse-clear-failed");
     }
     return null;
+  }
+}
+
+function consumePortalFreshStartFlag() {
+  try {
+    const storageKey = `${PORTAL_FRESH_START_PREFIX}${window.location.pathname.replace(/\/+$/, "")}`;
+    if (sessionStorage.getItem(storageKey) !== "1") return false;
+    sessionStorage.removeItem(storageKey);
+    return true;
+  } catch {
+    return false;
   }
 }
 

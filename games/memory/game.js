@@ -1,4 +1,5 @@
 const STORAGE_KEY = "dor-bachelor-memory-state-v1";
+const PORTAL_FRESH_START_PREFIX = "the-braz-games:fresh-start:";
 const STORAGE_VERSION = 3;
 const APP_VERSION = "2026-06-28-memory-card-face-preload-1";
 const RESTORABLE_PHASES = new Set(["start", "rules", "raffle", "playing", "resolving", "gameOver"]);
@@ -337,6 +338,10 @@ async function initialize() {
     window.history.replaceState({}, "", window.location.pathname);
     showCleanStart();
     return;
+  }
+
+  if (consumePortalFreshStartFlag()) {
+    clearSavedState();
   }
 
   const savedState = loadSavedState();
@@ -2431,6 +2436,17 @@ function isRecoverableSavedState(savedState) {
 
 function clearSavedState() {
   localStorage.removeItem(STORAGE_KEY);
+}
+
+function consumePortalFreshStartFlag() {
+  try {
+    const storageKey = `${PORTAL_FRESH_START_PREFIX}${window.location.pathname.replace(/\/+$/, "")}`;
+    if (sessionStorage.getItem(storageKey) !== "1") return false;
+    sessionStorage.removeItem(storageKey);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function resetMemoryRuntimeState() {

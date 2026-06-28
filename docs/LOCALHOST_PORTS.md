@@ -30,7 +30,7 @@ Run instruction requirements for each game:
 
 Port note: `3005` is reserved for the Song Starter skeleton. If the Fighter Face Mapper is needed at the same time, run it with `python3 server.py 3006` from `tools/fighter-face-mapper`.
 
-Portal note: run `python3 -m http.server 3000` from the repository root to open `The Braz Games`. The portal links to `games/memory/`, `games/submarine/`, `games/dino/`, and `games/super-brazio/` without adding `?init=1`, so it does not reset saved game state.
+Portal note: run `python3 -m http.server 3000` from the repository root to open `The Braz Games`. The portal links to `games/memory/`, `games/submarine/`, `games/dino/`, and `games/super-brazio/` with clean URLs, but a portal click marks the selected game for a one-time fresh start. The game then clears only its own localStorage key before showing the opening screen.
 
 Party rule: before the event, connect the actual TV/projector first, set browser zoom to 100%, open every approved game once on the real display, and verify the documented URL, fullscreen layout, audio, and controls.
 

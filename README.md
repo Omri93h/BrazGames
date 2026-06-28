@@ -42,6 +42,6 @@ Then open:
 http://localhost:3000
 ```
 
-The portal links to the four approved games under `games/` and does not reset their localStorage state.
+The portal links to the four approved games under `games/`. Clicking a game from the portal starts that selected game from a clean opening screen, while direct game URLs can still restore their own saved localStorage state.
 
 This is a private local party project, not a public commercial product. Use placeholders in the repo unless real private photos or sounds are explicitly provided and approved.

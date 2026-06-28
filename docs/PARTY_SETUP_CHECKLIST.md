@@ -65,7 +65,7 @@ If a game looks wrong only on one display, do not rewrite gameplay immediately. 
 ## Game Flow
 
 - Start game.
-- From the portal, click each game card and confirm the intended game page opens without reset.
+- From the portal, click each game card and confirm the intended game opens from its clean start screen.
 - Finish round.
 - Restart round.
 - Return to menu or reload page.

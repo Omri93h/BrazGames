@@ -6,7 +6,7 @@ Active task:
 
 - Prepare the existing static portal for production sharing from a private GitHub repository.
 - Add a root `The Braz Games` launcher page with four rounded game-selection cards.
-- The portal links to the four approved games only and must not reset their localStorage state.
+- The portal links to the four approved games only. Clicking a game from the portal must clear only that selected game's saved localStorage state and show its clean opening screen; direct game URLs may still restore saved state.
 - Serve the portal locally from the repository root at `http://localhost:3000`.
 - Keep the individual game ports available at `3001` through `3004`.
 - Use the existing local start-screen background images for the four cards.

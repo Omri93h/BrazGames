@@ -73,7 +73,7 @@ Then verify:
 
 - No `tmp/`, `backups/`, `undefined/`, `.env`, logs, or local server files are tracked.
 - `index.html` opens the four approved games only.
-- The portal links do not append `?init=1`, so they do not reset saved game state.
+- The portal links keep clean URLs, and a portal click triggers a one-time fresh start that clears only the selected game's localStorage key.
 - All runtime assets are local files in the repository.
 - Super Brazio still loads the versioned runtime vendor path.
 
@@ -91,7 +91,7 @@ Open:
 http://localhost:3000
 ```
 
-Click each game card once. For Super Brazio, start a real flow through the portal after any vendor/runtime change.
+Click each game card once and confirm it lands on that game's clean opening screen even if the same browser has saved progress. For Super Brazio, start a real flow through the portal after any vendor/runtime change.
 
 ## Files That Should Not Be Published
 

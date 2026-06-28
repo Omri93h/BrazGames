@@ -33,6 +33,7 @@ Core rules:
 - After each game implementation, include manual validation steps.
 - Cross-game keyboard control rule: in two-team keyboard games, `החן יוספים, ועוזריהם` use `WASD`, and `הבראזים` use the arrow keys, unless the user explicitly changes this later.
 - Cross-game reset/admin rule: prefer no visible `איפוס תוצאה` button in the normal party UI unless the user explicitly asks for one in that game. `Command+D` should open the confirmation reset/admin popup, asking `האם אתה בטוח?`, and reset must clear only the current game's localStorage key. There is no reset password.
+- Cross-game portal-entry rule: clicking a game from the root portal should open that selected game from a clean opening screen by clearing only that game's localStorage key. Direct game URLs and normal refresh/reopen behavior may still restore saved state.
 - If a game raffles who starts, use a centered modal/overlay that alternates between the selected player names, not the team names. The chosen player's team becomes the starting side.
 - Rules/instructions modals should last 16 seconds with a circular loader and then advance automatically.
 - Rules/instructions modals should be skippable with `Space` while the modal is visible. Scope this shortcut to the rules phase only so it does not interfere with live gameplay controls.

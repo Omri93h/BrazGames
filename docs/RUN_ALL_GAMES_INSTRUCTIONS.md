@@ -39,7 +39,7 @@ Open:
 http://localhost:3000
 ```
 
-The portal links to the four game subpages and does not append reset query params.
+The portal links to the four game subpages with clean URLs. A normal portal click marks the selected game for a one-time fresh start, so it opens from its clean start screen without adding reset query params.
 
 Run each one from its own folder:
 
