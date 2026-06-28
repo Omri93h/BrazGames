@@ -12,7 +12,7 @@ import {loadAudioBoard} from '../loaders/audio.js';
 import {loadSpriteSheet} from '../loaders/sprite.js';
 
 const SLOW_DRAG = 1/1000;
-const DOR_MARIO_FACE_SRC = new URL('../../../../assets/images/players/dor_mario_face.png?v=2026-06-28-dor-face-preload-1', import.meta.url).href;
+const DOR_MARIO_FACE_SRC = new URL('../../../../assets/images/players/dor_mario_face.png?v=2026-06-28-dor-face-placement-1', import.meta.url).href;
 
 const dorMarioFaceImage = new Image();
 let dorMarioFaceReady = false;
@@ -138,14 +138,14 @@ function createMarioFactory(sprite, audio) {
         const large = isPoweredUp(mario);
         const visual = large
             ? {
-                offset: {x: -11, y: -16},
-                body: {x: 11, y: 16},
-                face: {x: 0, y: 0, width: 36, height: 31},
+                offset: {x: -8, y: -8},
+                body: {x: 8, y: 8},
+                face: {x: 2, y: 0, width: 28, height: 28},
             }
             : {
-                offset: {x: -9, y: -14},
-                body: {x: 9, y: 14},
-                face: {x: 0, y: 0, width: 30, height: 26},
+                offset: {x: -7, y: -10},
+                body: {x: 7, y: 10},
+                face: {x: 4, y: 0, width: 22, height: 22},
             };
         mario.drawOffset = visual.offset;
 
