@@ -124,7 +124,7 @@ button {
     "chen brazim"
     "fighters fighters";
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: minmax(9.2rem, 0.72fr) minmax(14.6rem, 0.94fr) minmax(18rem, 1.24fr);
+  grid-template-rows: minmax(9rem, 0.68fr) minmax(15.8rem, 1.06fr) minmax(17.4rem, 1.16fr);
   gap: clamp(0.8rem, 1.5vw, 1.25rem);
   direction: ltr;
 }
@@ -195,13 +195,14 @@ button {
 
 .team-select {
   position: relative;
+  z-index: 10;
   min-width: 0;
   min-height: 0;
   align-self: stretch;
   display: grid;
-  grid-template-rows: clamp(4.45rem, 7.2vh, 5.45rem) minmax(7.8rem, auto);
-  align-content: start;
-  gap: clamp(0.7rem, 1.05vw, 1rem);
+  grid-template-rows: clamp(3.82rem, 6.15vh, 4.7rem) minmax(8.7rem, 1fr);
+  align-content: stretch;
+  gap: clamp(0.34rem, 0.72vw, 0.58rem);
   padding: clamp(0.78rem, 1.15vw, 1rem) clamp(0.9rem, 1.3vw, 1.15rem) clamp(0.45rem, 0.9vh, 0.7rem);
   border: 3px solid var(--team-color);
   border-radius: 8px;
@@ -250,14 +251,16 @@ button {
   color: var(--ink);
   font-size: clamp(2.1rem, 3.65vw, 4.6rem);
   font-weight: 1000;
-  line-height: 0.92;
+  line-height: 0.86;
   text-align: center;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.72);
 }
 
 .team-select-title small {
   display: block;
-  font-size: 0.62em;
+  margin-top: -0.08em;
+  font-size: 0.48em;
+  line-height: 0.82;
   color: color-mix(in srgb, var(--ink) 82%, var(--team-color));
 }
 
@@ -272,13 +275,13 @@ button {
 .character-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-content: start;
-  align-items: start;
+  align-content: center;
+  align-items: center;
   gap: clamp(0.65rem, 1.35vw, 0.95rem);
   width: min(100%, 43rem);
   min-height: 0;
   justify-self: center;
-  padding: 0 0 clamp(0.12rem, 0.35vh, 0.28rem);
+  padding: 0 0 clamp(0.3rem, 0.7vh, 0.55rem);
 }
 
 .character-card {
@@ -436,6 +439,8 @@ button {
 
 .fighter-stage {
   grid-area: fighters;
+  position: relative;
+  z-index: 40;
   min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(7.2rem, 0.38fr) minmax(0, 1fr);
@@ -447,6 +452,8 @@ button {
 }
 
 .fighter-slot {
+  position: relative;
+  z-index: 41;
   min-width: 0;
   min-height: 0;
   display: grid;
@@ -469,6 +476,7 @@ button {
 
 .fighter-preview {
   position: relative;
+  z-index: 42;
   width: clamp(9rem, 13vw, 13.8rem);
   height: clamp(15.5rem, 35vh, 25rem);
   max-height: 100%;
@@ -587,6 +595,8 @@ button {
 }
 
 .start-actions {
+  position: relative;
+  z-index: 20;
   width: min(22rem, 100%);
   align-self: end;
   justify-self: center;
