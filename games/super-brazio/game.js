@@ -1,4 +1,5 @@
 const STORAGE_KEY = "dor-bachelor-super-brazio-state-v1";
+const PORTAL_FRESH_START_PREFIX = "the-braz-games:fresh-start:";
 const VENDOR_DIAGNOSTICS_KEY = "dor-bachelor-super-brazio-vendor-diagnostics-v1";
 const STORAGE_VERSION = 4;
 const RULES_MODAL_MS = 16000;
@@ -258,6 +259,10 @@ function init() {
   if (URL_PARAMS.get("init") === "1") {
     localStorage.removeItem(STORAGE_KEY);
     window.history.replaceState({}, "", getCleanStartupPath());
+  }
+
+  if (consumePortalFreshStartFlag()) {
+    localStorage.removeItem(STORAGE_KEY);
   }
 
   if (IS_DEBUG_MODE) {
@@ -1336,6 +1341,17 @@ function restoreState() {
     if (state.phase !== "start") startIntroStarted = true;
   } catch {
     localStorage.removeItem(STORAGE_KEY);
+  }
+}
+
+function consumePortalFreshStartFlag() {
+  try {
+    const storageKey = `${PORTAL_FRESH_START_PREFIX}${window.location.pathname.replace(/\/+$/, "")}`;
+    if (sessionStorage.getItem(storageKey) !== "1") return false;
+    sessionStorage.removeItem(storageKey);
+    return true;
+  } catch {
+    return false;
   }
 }
 

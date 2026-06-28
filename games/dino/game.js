@@ -1,4 +1,5 @@
 const STORAGE_KEY = "dor-bachelor-dino-state-v1";
+const PORTAL_FRESH_START_PREFIX = "the-braz-games:fresh-start:";
 const STORAGE_VERSION = 8;
 const IS_MAC_PLATFORM = /Mac|iPhone|iPad|iPod/i.test(navigator.platform || "");
 const CHOOSE_FIGHTER_SOUND_SRC = "assets/sounds/choose-your-fighter.mp3?v=2026-06-23-choose-fighter-1";
@@ -457,6 +458,10 @@ function init() {
   if (new URLSearchParams(window.location.search).get("init") === "1") {
     localStorage.removeItem(STORAGE_KEY);
     window.history.replaceState({}, "", window.location.pathname);
+  }
+
+  if (consumePortalFreshStartFlag()) {
+    localStorage.removeItem(STORAGE_KEY);
   }
 
   restoreState();
@@ -2011,6 +2016,17 @@ function restoreState() {
     if (!state.countdownEndsAt) state.countdownEndsAt = 0;
   } catch {
     localStorage.removeItem(STORAGE_KEY);
+  }
+}
+
+function consumePortalFreshStartFlag() {
+  try {
+    const storageKey = `${PORTAL_FRESH_START_PREFIX}${window.location.pathname.replace(/\/+$/, "")}`;
+    if (sessionStorage.getItem(storageKey) !== "1") return false;
+    sessionStorage.removeItem(storageKey);
+    return true;
+  } catch {
+    return false;
   }
 }
 

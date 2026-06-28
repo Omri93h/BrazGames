@@ -52,5 +52,29 @@
         </a>
       </nav>
     </main>
+    <script>
+      (() => {
+        const PORTAL_FRESH_START_PREFIX = "the-braz-games:fresh-start:";
+        const normalizePath = (pathname) => pathname.replace(/\/+$/, "");
+
+        const markFreshStart = (link) => {
+          try {
+            const targetUrl = new URL(link.getAttribute("href"), window.location.href);
+            sessionStorage.setItem(`${PORTAL_FRESH_START_PREFIX}${normalizePath(targetUrl.pathname)}`, "1");
+          } catch {
+            // If sessionStorage is blocked, the clean game link still works as a normal direct entry.
+          }
+        };
+
+        document.querySelectorAll('a[href^="games/"]').forEach((link) => {
+          link.addEventListener("pointerdown", () => markFreshStart(link));
+          link.addEventListener("click", () => markFreshStart(link));
+          link.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            markFreshStart(link);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
