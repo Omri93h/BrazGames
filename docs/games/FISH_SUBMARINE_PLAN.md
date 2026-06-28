@@ -112,7 +112,7 @@ Before gameplay starts, show an 8-second next-stage screen:
 - HUD should show a survival timer at the top during active gameplay.
 - If the browser tab/window is hidden or minimized, active Submarine gameplay, countdowns, round summaries, and elimination freeze timers should pause and resume without advancing the survival timer in the background.
 - `Command+D` on Mac or `Ctrl+D` on Windows on the start screen should toggle a solo debug mode with one submarine for practice/testing. Only debug mode should show enemy pressure numbers.
-- `Command+D` on Mac or `Ctrl+D` on Windows during the game should open the password-protected reset popup. Password `Chmir` clears only Submarine state and returns to the home screen.
+- `Command+D` on Mac or `Ctrl+D` on Windows during the game should open the confirmation reset popup. There is no reset password; confirming clears only Submarine state and reloads the page to the home screen.
 - During active play, browser shortcut combinations should be blocked where possible so frantic key presses do not trigger browser zoom/reload/navigation and shrink or interrupt the game.
 - Canvas sizing should be guarded by continuous/viewport-aware resize checks, and the active HUD should be height-contained, so browser zoom/resize or long HUD text cannot leave the game rendering only in part of the playfield.
 - The full Submarine app should keep a small projector-safe margin around the edges. Apply it outside the HUD/canvas/overlays and make the canvas measure its actual rendered area, so the margin protects against projector overscan without changing internal gameplay rules.
@@ -121,7 +121,7 @@ Before gameplay starts, show an 8-second next-stage screen:
 - During performance testing, add `?debugLogs=1` so the browser console logs asset loading, enemy spawn/cleanup, pressure waves, slow frames, tint cache size, and periodic runtime enemy counts. Keep these logs off by default during normal play so collision frames stay smooth.
 - Game over should be simple: `המנצחים:`, the winning team, and a big left/right final score without `נקודות` or survival-time text. The score number order must be left-to-right by visual placement: left number for `החן יוספים, ועוזריהם`, right number for `הבראזים`.
 - The final result screen decorates the result with fully visible mirrored `bezos_southpark.webp` sprites on both sides, flipping every half second, plus a compact row of local enemy-face assets underneath with staggered mirroring for non-Magami faces. The enemy-face strip should stay vertically centered with bottom clearance and must not crop the chins/heads. Magami uses trimmed display-only copies, `magami_final.png` and `magami_final_open.png`, so it alternates between closed-mouth and open-mouth frames instead of mirroring. Two small Michael Hitler / Adolf Jackson sprites appear quickly above the result card and drift slowly in a DVD/no-HDMI-inspired path, almost reaching edges without rotating, stretching, hard-bouncing off corners, or blocking score text and controls.
-- Game over should include an `איפוס תוצאה` button using the same password-protected reset popup.
+- Game over should include an `איפוס תוצאה` button that clears only Submarine state and reloads the page to the home screen immediately, without an extra confirmation prompt.
 - Exact mid-frame restoration of active enemies is not required yet; safe current-round restart is preferred over restoring a broken live scene.
 
 ## Assets

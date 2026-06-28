@@ -230,7 +230,7 @@ Browser note:
 9. Reaching the `1-1` flag/pole fades the canvas out, loads `brazio-2`, and fades back in.
 10. Reaching Princess Daniel in `brazio-2` ends the entire game.
 11. Winner modal appears.
-12. `Command+D` on Mac or `Ctrl+D` on Windows opens password reset/admin.
+12. `Command+D` on Mac or `Ctrl+D` on Windows opens confirmation reset/admin.
 
 No starter raffle is needed.
 
@@ -436,8 +436,9 @@ Required persistence behavior:
 - The saved state includes the current level so refresh during `brazio-2` reloads directly into the finale world after the vendor readiness countdown.
 - When the game is over, refresh should preserve the winner modal until reset/start-over.
 - `?init=1` clears only the Super Brazio storage key.
-- `Command+D` on Mac or `Ctrl+D` on Windows opens password reset/admin popup.
-- Password remains `Chmir`.
+- `Command+D` on Mac or `Ctrl+D` on Windows opens a confirmation reset/admin popup.
+- There is no reset password. The popup asks `האם אתה בטוח?`, and confirming clears only Super Brazio state and reloads the page to the start screen. The gameplay screen has a small top-left `איפוס` button with the same confirmation popup.
+- The winner screen has an `איפוס משחק` button that clears only Super Brazio state and reloads the page to the start screen immediately, without an extra confirmation prompt.
 - Reset clears only Super Brazio state.
 - Do not clear Memory, Submarine, or Dino state.
 - No visible reset button in the normal party UI unless explicitly requested.
@@ -571,9 +572,9 @@ Block 6: validation docs
 24. Sound volume is acceptable and not painfully loud.
 25. Refresh during live gameplay returns to a safe pre-game countdown with selected characters preserved, waits for vendor readiness, hard-reboots failed iframe boots, and never leaves the player stuck on the internal `LOADING 1-1...`, `LOADING brazio-2...`, or `תקלה` screen.
 26. Refresh after win preserves the winner state.
-27. `Command+D` on Mac or `Ctrl+D` on Windows opens password reset/admin.
-28. Wrong password does not reset.
-29. Password `Chmir` clears only Super Brazio state.
+27. `Command+D` on Mac or `Ctrl+D` on Windows opens confirmation reset/admin.
+28. The reset popup asks `האם אתה בטוח?` and does not ask for a password.
+29. Confirming reset clears only Super Brazio state.
 30. `?init=1` clears only Super Brazio state.
 31. Memory/Submarine/Dino localStorage keys are untouched.
 32. No external network requests are required during runtime.

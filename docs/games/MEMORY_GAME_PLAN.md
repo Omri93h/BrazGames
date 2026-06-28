@@ -59,9 +59,8 @@ Known issue avoided:
 - One primary button: `התחל`.
 - Clicking `התחל` shows a 16-second rules modal with very short instructions, a short mouse-control note, and a circular loader, then opens a centered raffle modal, shows `מגרילים מי מתחיל`, alternates between the selected player names, holds the selected starting player on screen for about 3 seconds, and then starts the game automatically. The selected player's team becomes the active starting team.
 - `איפוס תוצאה` is not shown on the clean start screen.
-- No visible `איפוס תוצאה` button is shown during active gameplay. The final game-over result screen includes a secondary `איפוס תוצאה` button. Pressing `Command+D` on Mac or `Ctrl+D` on Windows also opens the password popup before clearing Memory localStorage.
-- Reset password is `Chmir`.
-- The same password popup accepts `Cheater` as a testing-only toggle that visually reveals all card faces; entering `Cheater` again hides the unclaimed cards. It does not reset scores or collect pairs.
+- No visible `איפוס תוצאה` button is shown during active gameplay. The final game-over result screen includes a secondary `איפוס תוצאה` button. Pressing `Command+D` on Mac or `Ctrl+D` on Windows also opens the confirmation-only reset popup before clearing Memory localStorage.
+- There is no reset password. The popup asks `האם אתה בטוח?`, and confirming clears only the Memory game state.
 - No visible New Game or Restart appears after the game ends.
 
 Fixed team colors:
@@ -83,9 +82,7 @@ Refreshing, closing, or reopening the browser during an active Memory game must 
 
 Opening `http://localhost:3001?init=1` clears only the Memory storage key and returns to a clean start screen.
 
-The `Command+D` on Mac / `Ctrl+D` on Windows reset flow clears only the Memory storage key after the correct password.
-
-For testing/debugging, entering `Cheater` in the same password popup toggles full-card visibility and persists that visibility with the saved Memory state.
+The `Command+D` on Mac / `Ctrl+D` on Windows reset flow clears only the Memory storage key after confirmation.
 
 Saved state includes:
 

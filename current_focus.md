@@ -163,8 +163,8 @@ Current Submarine direction:
   - refresh restores match context after gameplay has started.
   - refresh during live play restarts only the current round/pre-round checkpoint, while score and selected characters stay saved.
   - refresh on the start screen returns to a clean opening state with no selected character cards or fighter previews.
-  - `Command+D` on Mac or `Ctrl+D` on Windows opens the password-protected reset popup during gameplay and toggles solo debug mode on the start screen.
-  - password `Chmir` clears only Submarine state.
+  - `Command+D` on Mac or `Ctrl+D` on Windows opens the confirmation reset popup during gameplay and toggles solo debug mode on the start screen.
+  - There is no reset password; confirming clears only Submarine state and reloads the page to the home screen.
   - `?init=1` also clears only Submarine state.
 - Between-round Submarine overlays stay minimal: round summary shows only who ate it plus survival time in `MM:SS` format, and the next-stage screen shows only selected face portraits in large square frames plus the stage name and countdown. The next-stage portraits keep the same visual direction as the start-screen cards, so הבראזים portraits face left/inward.
 - The Submarine rules modal ends with `מי יצליח לקחת את דור לחוף המבטחים מתקופת הצבא האכזרית?`.

@@ -242,11 +242,11 @@ Required behavior when implemented:
 - Refresh/reopen should restore the match context automatically.
 - If refresh happens during live gameplay, restarting the current round safely is acceptable as long as score, selected characters, round number, and match state are preserved.
 - Current Dino behavior: refresh during live gameplay returns to the countdown checkpoint for the same round, with score and completed round results preserved.
-- `Command+D` on Mac or `Ctrl+D` on Windows opens the password-protected reset/admin popup.
+- `Command+D` on Mac or `Ctrl+D` on Windows opens the confirmation reset/admin popup.
 - `Command+D` on Mac or `Ctrl+D` on Windows on the start screen toggles solo debug mode for one active runner and shows a visible badge.
 - Starting a match while solo debug mode is active skips the 16-second rules modal and the 8-second round countdown, then begins the current round immediately.
 - During gameplay, `Command+D` on Mac or `Ctrl+D` on Windows opens reset. On Mac only, `Ctrl+D` toggles solo debug mode.
-- Password remains `Chmir`.
+- There is no reset password. The popup asks `האם אתה בטוח?`, and confirming clears only Dino state.
 - Reset clears only the Dino storage key.
 - Do not clear Memory or Submarine state.
 - Avoid visible reset buttons in the normal party UI unless explicitly requested.
@@ -329,9 +329,9 @@ Block 5: asset replacement
 14. After 5 rounds, winner/tie is shown.
 15. Difficulty stars appear briefly only when the difficulty increases.
 16. Refresh during live play returns to the same round countdown with score preserved.
-17. `Command+D` on Mac or `Ctrl+D` on Windows opens password reset.
+17. `Command+D` on Mac or `Ctrl+D` on Windows opens confirmation reset.
 18. `Command+D` on Mac or `Ctrl+D` on Windows on the start screen shows the solo debug badge.
-19. Password `Chmir` resets only Dino state.
+19. Confirming reset clears only Dino state.
 20. On Mac, `Ctrl+D` during gameplay toggles solo debug mode.
 21. `Command+D` on Mac or `Ctrl+D` on Windows during gameplay opens reset.
 22. No internet required.

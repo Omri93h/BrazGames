@@ -39,7 +39,7 @@ http://localhost:3004?debug=1
 
 Debug mode opens a small level picker for one-player testing, then skips character selection and rules. It does not write the normal party localStorage state. To test the castle finale directly without the picker:
 
-From the normal start screen, `Command+D` on Mac or `Ctrl+D` on Windows also enters the same debug picker. During gameplay and winner/reset flows, `Command+D` on Mac or `Ctrl+D` on Windows still opens the password-protected reset popup.
+From the normal start screen, `Command+D` on Mac or `Ctrl+D` on Windows also enters the same debug picker. During gameplay and winner/reset flows, `Command+D` on Mac or `Ctrl+D` on Windows opens the confirmation reset popup.
 
 ```text
 http://localhost:3004?debug=1&level=brazio-2
@@ -127,8 +127,9 @@ Implemented now:
 - Refresh during live play reloads the vendored Mario frame at the saved current world, waits for the iframe `ready` signal, and restarts from the pre-game countdown with selected characters preserved.
 - Vendor boot uses a versioned path, cache-busted URLs, diagnostics, and a watchdog. If the iframe fails or stays on `LOADING 1-1...`, the shell replaces the iframe and tries again instead of showing a terminal error.
 - Refresh after a win preserves the top winner banner.
-- `Command+D` on Mac or `Ctrl+D` on Windows enters the hidden debug picker from the normal start screen; outside the start screen it opens the password-protected reset popup.
-- Password `Chmir` clears only Super Brazio state.
+- `Command+D` on Mac or `Ctrl+D` on Windows enters the hidden debug picker from the normal start screen; outside the start screen it opens the confirmation reset popup.
+- There is no reset password; confirming clears only Super Brazio state and reloads the page to the start screen. The gameplay screen also has a small top-left `איפוס` button that opens the same confirmation popup.
+- The winner banner includes an `איפוס משחק` button that clears only Super Brazio state and reloads the page to the start screen immediately, without an extra confirmation prompt.
 - Single-user debug mode is available from the hidden start-screen `Command+D` on Mac or `Ctrl+D` on Windows shortcut, at `?debug=1` with a stage picker, and at `?debug=1&level=brazio-2` for direct castle testing.
 - The diagnostics HUD renders its key text in the parent HTML layer, not inside the low-resolution Mario canvas, so screenshots show readable camera tiles, Mario position, body/under tiles, nearby ICE ids, and nearby checkpoint flag ids. The canvas also draws compact `E#` and `F#` labels above the relevant objects.
 - In debug mode only, enemy deaths flash Mario at the failure spot but respawn near the last safe spot, or the nearest clear floor around the failure X, instead of the checkpoint. Pit deaths still respawn at the latest checkpoint flag.
@@ -241,9 +242,9 @@ Keep all assets local. Do not use external hosted assets at runtime.
 51. The normal start screen does not show any visible debug hint or debug button.
 52. Pressing the hidden `Command+D` on Mac or `Ctrl+D` on Windows shortcut on the normal start screen opens the debug-only stage picker.
 53. Choosing a debug stage boots the iframe with vendor `debug=1` and does not show character selection or rules.
-54. `Command+D` on Mac or `Ctrl+D` on Windows outside the normal start screen opens the reset popup.
-55. Wrong password does not reset.
-56. Password `Chmir` resets only Super Brazio state.
+54. `Command+D` on Mac or `Ctrl+D` on Windows outside the normal start screen opens the reset confirmation popup.
+55. The reset popup asks `האם אתה בטוח?` and does not ask for a password.
+56. Confirming resets only Super Brazio state and reloads to the start screen.
 57. `?init=1` clears only Super Brazio state.
 58. Memory, Submarine, and Dino localStorage keys are untouched.
 59. No internet required at runtime.
